@@ -9,12 +9,12 @@ const ToggleMode = ({mode, callback}) => {
     const main = {
         backgroundColor: '#F46B47',
         color: 'white',
-        boxShadow: 'inset 0px 0px 5px 0px rgba(0,0,0,0.75)',
+        boxShadow: 'inset 0px 0px 6px 0px rgba(0,0,0,0.45)',
     }
     const active = {
         backgroundColor: '#F46B47',
         color: 'white',
-        boxShadow: 'inset 0px 0px 5px 0px rgba(0,0,0,0.75)',
+        boxShadow: 'inset 0px 0px 6px 0px rgba(0,0,0,0.45)',
     }
     const inactive = {
         // visibility : 'hidden',
@@ -67,7 +67,6 @@ const ToggleMode = ({mode, callback}) => {
                 btns[0].style.visibility = 'hidden';
             }, 300); 
         }
-        console.log(btns[0])
     }
 
     const handleMode = (e) => {
