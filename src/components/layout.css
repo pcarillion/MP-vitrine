@@ -5,6 +5,7 @@
 * {
     font-family: 'Alatsi';
     font-weight: 400;
+    transition: linear all 0.3s;
 }
 
 body {
@@ -118,7 +119,15 @@ h2 {
     .nav ul li {
         font-size: 15px
     }   
+    .nav ul {
+        min-width: 500px
+    }
 }
+
+@media screen and (max-width : 700px) {
+
+}
+
 /* header */
 
 
@@ -505,7 +514,7 @@ header section p {
 #about-images-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 #about-images-container > div {
@@ -598,6 +607,7 @@ footer  #footer-logo {
 #footer-container > div:nth-child(2) svg {
     height: 21px;
     width: 23px;
+    margin: 20px 0;
 }
 
 
@@ -605,11 +615,11 @@ footer  #footer-logo {
     text-align: right;
 }
 
-@media screen and (max-width : 510px) {
+@media screen and (max-width : 750px) {
     #footer-container {
         flex-direction: column;
     }
-    #footer-container * {
+    #footer-container p {
         margin-bottom: 10px;
         text-align: center !important;
     }
