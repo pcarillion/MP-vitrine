@@ -105,7 +105,6 @@ h2 {
         font-size: 15px
     }   
 }
-
 /* header */
 
 
@@ -166,6 +165,24 @@ header section p {
     .main-image-section {
         display: none;
     }   
+}
+
+@media screen and (max-width : 510px) {
+    header {
+        padding: 70px 9vw 100px 9vw !important;
+    }
+    header section:first-of-type.title-section {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .header-btns-container {
+        flex-direction: column;
+    }
+
+    .header-btns-container div {
+        margin-bottom: 10px
+    }
 }
 
 
@@ -230,6 +247,30 @@ header section p {
     #services-cards section {
         padding: 0 20px;
     }
+}
+
+@media screen and (max-width : 510px) {
+    #services-main-container{
+        height: 1250px;
+    }
+    #services-main-container h2{
+        margin-bottom: 30px;
+    }
+    #services-container{
+        height: fit-content;
+    }
+    #services-cards {
+        flex-direction: column;
+    }
+    #services-cards section{
+        width: 100%;
+        height: 350px;
+        margin-top: 30px;
+    }
+    #services-cards section h4 {
+        margin-top: 0;
+    }
+
 }
 
 /* notre travail component */
@@ -302,7 +343,21 @@ header section p {
     padding: 5px 20Px;
     border-radius: 90px;
 }
-
+@media screen and (max-width : 510px) {
+    #travail-btns-list {
+        padding: 10px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #travail-btns-list li {
+        width: fit-content;
+        margin: 5px 7px;
+    }
+    #projects-container .project-card{
+        width: 47%;
+        margin-bottom: 0;
+    }
+}
 /* tarifs */
 
 #tarifs-main-container {
@@ -364,6 +419,17 @@ header section p {
     #tarifs-container section {
         padding: 50px 2%;
         width: 32%;
+    }
+}
+
+@media screen and (max-width : 510px) {
+    #tarifs-container {
+        flex-direction: column;
+    }
+    #tarifs-container section{
+        width: 100%;
+        padding: 20px;
+        margin: 5px 0;
     }
 }
 /* About component */
@@ -443,6 +509,15 @@ header section p {
         margin-bottom: 50px;
     }
 }
+
+@media screen and (max-width : 510px) {
+    #about-container {
+        padding-top: 50px;
+    }
+    #about-container section:first-of-type {
+        padding: 0;
+    }
+}
 /* footer */
 
 footer {
@@ -495,4 +570,14 @@ footer  #footer-logo {
 
 #footer-container > div:last-child p{
     text-align: right;
+}
+
+@media screen and (max-width : 510px) {
+    #footer-container {
+        flex-direction: column;
+    }
+    #footer-container * {
+        margin-bottom: 10px;
+        text-align: center !important;
+    }
 }
