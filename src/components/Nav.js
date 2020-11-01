@@ -1,13 +1,16 @@
 import React from 'react'
 
-window.addEventListener('scroll', function () {
-    console.log(window.pageYOffset)
-    if (window.pageYOffset > 450){
-        document.getElementsByClassName('nav')[0].style.boxShadow = '0px 3px 3px 0px rgba(0,0,0,0.3)'
-    } else if (window.pageYOffset < 450){
-        document.getElementsByClassName('nav')[0].style.boxShadow = 'none'
-    }
-})
+if (window) {
+    window.addEventListener('scroll', function () {
+        console.log(window.pageYOffset)
+        if (window.pageYOffset > 450){
+            document.getElementsByClassName('nav')[0].style.boxShadow = '0px 3px 3px 0px rgba(0,0,0,0.3)'
+        } else if (window.pageYOffset < 450){
+            document.getElementsByClassName('nav')[0].style.boxShadow = 'none'
+        }
+    })
+}
+
 
 const Nav = ({mode}) => {
 
