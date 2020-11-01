@@ -93,6 +93,7 @@ h2 {
     left: 0;
     width: 82vw;
     z-index: 10;
+    transition: linear all 0.3s;
 }
 
 .nav * {
