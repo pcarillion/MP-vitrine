@@ -1,7 +1,9 @@
-import React from "react"
-
+import React, {useState} from "react"
 
 import Img from 'gatsby-image'
+
+import ToggleMode from './../components/ToggleMode'
+
 import Nav from './../components/Nav'
 import Layout from './../components/Layout'
 import Header from './../components/Header'
@@ -14,32 +16,23 @@ import Footer from './../components/Footer'
 
 export default function Home() {
 
-  const Paul = false
+  const [mode, setMode] = useState('MP')
+
+  function handleMode (x) {
+    setMode(x)
+  }
+
 
   return <Layout>
-            <Nav></Nav>
-
-{/* Header */}
-
-<Header Paul={Paul}/>
-
-{/* Nos services  */}
-
-<Services/>
-
-{/* Notre travail */}
-
-<Travail/>
-
-{/* Nos tarifs */}
-
-<Tarifs/>
-
-{/* Qui sommes nous */}
-
-<About/>
-
-            <Footer></Footer>
-
+            
+            <ToggleMode mode={mode} callback={handleMode}/>
+            
+<Nav mode={mode}/>
+<Header mode={mode}/>
+<Services mode={mode}/>
+<Travail mode={mode}/>
+<Tarifs mode={mode}/>
+<About mode={mode}/>
+<Footer mode={mode}/>
   </Layout>
 }

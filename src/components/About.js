@@ -24,7 +24,7 @@ query {
     }
 }
 `
-const About = () => {
+const About = ({mode}) => {
     const {imageMarine, imagePaul} = useStaticQuery(query);
     const bg = {
         backgroundColor: '#FCE7D5'
@@ -32,6 +32,13 @@ const About = () => {
     const fontColor = {
         color: '#F46B47'
     }
+    if (mode === 'Paul') {
+        bg.backgroundColor= '#002C3B'
+        fontColor.color = '#FCF3EB'
+    } else if (mode === 'Marine') {
+        bg.backgroundColor= '#F7FDFE'
+    }
+
     return (
         <div id="about-container" style={bg}>
             <section>
@@ -41,16 +48,16 @@ const About = () => {
                 </p>
             </section>
             <section id='about-images-container'>
-                <div>
+                {(mode === 'Marine' || mode == 'MP') && <div>
                     <div>
                         <Img className='about-image' fluid={imageMarine.childImageSharp.fluid} alt="sudfa logo"/>
                     </div>
-                </div>
-                <div>
+                </div>}
+                {(mode === 'Paul' || mode == 'MP') && <div>
                     <div>
                         <Img className='about-image' fluid={imagePaul.childImageSharp.fluid} alt="sudfa logo"/>
                     </div>
-                </div>
+                </div>}
             </section>
         </div>
     )

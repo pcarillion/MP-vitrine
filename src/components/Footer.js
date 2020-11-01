@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = () => {
+const Footer = ({mode}) => {
     const bg = {
         backgroundColor: '#FCE7D5'
     }
@@ -14,6 +14,15 @@ const Footer = () => {
     const hrStyle = {
         borderTop : 'solid 2px #207D85'
     }
+    if (mode === 'Paul') {
+        bg.backgroundColor= '#002C3B'
+        fontColor.color = '#207D85'
+        logoStyle.backgroundColor = '#002C3B'
+    } else if (mode === 'Marine') {
+        bg.backgroundColor= '#F7FDFE'
+        logoStyle.backgroundColor = '#F7FDFE'
+    }
+
     return (
         <footer style ={ bg }>
             <div id='footer-hr' style ={ hrStyle }>

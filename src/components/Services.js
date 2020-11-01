@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Services = () => {
+const Services = ({mode}) => {
 
     const mainBG = {
         backgroundColor: 'white'
@@ -21,6 +21,13 @@ const Services = () => {
         // color: '#207D85'
     }
 
+    if (mode === 'Paul') {
+        mainBG.backgroundColor= '#333333'
+        containerBG.backgroundColor = '#FCF3EB'
+        fontP.color = '#207D85'
+    } else if (mode === "Marine") {
+        containerBG.backgroundColor = '#FCF3EB'
+    }
 
     return (
         <div id='services-main-container' style = {mainBG}>

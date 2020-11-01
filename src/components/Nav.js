@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Nav = () => {
+const Nav = ({mode}) => {
 
 
     const bgNav = {
@@ -19,6 +19,12 @@ const Nav = () => {
         textAlign: 'center',
         padding: '5px 20px',
         borderRadius: '90px'
+    }
+
+    if (mode === "Paul") {
+        bgNav.backgroundColor = '#002C3B'
+    } else if (mode == "Marine") {
+        bgNav.backgroundColor = '#F7FDFE'
     }
 
     return (

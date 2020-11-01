@@ -18,7 +18,7 @@ query {
 }
 `
 
-const Header = ({Paul}) => {
+const Header = ({mode}) => {
 
     const {image} = useStaticQuery(query);
 
@@ -31,8 +31,12 @@ const Header = ({Paul}) => {
     }
 
 
-    if (Paul) {
+    if (mode === 'Paul') {
         headerStyle.backgroundColor ='#002C3B'
+        fontStyle.color = '#FCF3EB'
+    } else if (mode === "Marine") {
+        headerStyle.backgroundColor ='#F7FDFE'
+
     }
 
     return (

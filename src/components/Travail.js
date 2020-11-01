@@ -1,7 +1,10 @@
 import React from 'react'
 
-const Travail = () => {
+const Travail = ({mode}) => {
 
+    const mainBG = {
+        backgroundColor: 'white'
+    }
     const fonth2 = {
         color: '#207D85',
     }
@@ -15,8 +18,14 @@ const Travail = () => {
         color: '#207D85',
     }
 
+    if (mode === 'Paul') {
+        mainBG.backgroundColor= '#333333'
+        fonth2.color = '#F46B47'
+        fontBtn.color = '#FCF3EB'
+    }
+
     return (
-        <div id='travail-container'>
+        <div id='travail-container' style = {mainBG}>
             <h2 style = { fonth2 }>Notre travail</h2>
             <ul id="travail-btns-list">
                 <li style = { fontBtn }>Tout</li>
