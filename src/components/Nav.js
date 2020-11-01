@@ -1,6 +1,6 @@
 import React from 'react'
 
-if (window) {
+if (typeof window !== 'undefined') {
     window.addEventListener('scroll', function () {
         console.log(window.pageYOffset)
         if (window.pageYOffset > 450){

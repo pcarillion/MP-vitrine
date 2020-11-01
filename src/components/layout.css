@@ -162,7 +162,7 @@ header section p {
 .header-btns-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .header-btn-1 {
@@ -172,6 +172,7 @@ header section p {
     padding: 5px 20px;
     border-radius: 90px;
     color: #FCF3EB;
+    margin-right: 50px;
 }
 
 .header-btn-2 {
