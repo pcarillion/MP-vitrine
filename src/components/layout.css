@@ -7,6 +7,10 @@
     font-weight: 400;
 }
 
+body {
+    margin: 0;
+}
+
 p, span {
     font-family: 'Old Standard TT', serif;
 }
@@ -552,7 +556,7 @@ footer  #footer-logo {
     margin-bottom: 5px;
 }
 #footer-container > div {
-    width: 180px;
+    width: 205px;
 }
 
 #footer-container > div:nth-child(2){

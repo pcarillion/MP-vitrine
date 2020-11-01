@@ -89,7 +89,7 @@ const Footer = ({mode}) => {
                     </div>
                 </div>
                 <div>
-                    <p style= {fontColor}>adressemail@denous.fr</p>
+                    <p style= {fontColor}>m.and.p.web.agency@gmail.fr</p>
                     <p style= {fontColor}>07 67 50 20 39</p>
                     <p style= {fontColor}>06 79 75 24 86</p>
                 </div>
