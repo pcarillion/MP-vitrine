@@ -35,7 +35,7 @@ h2 {
 .toggle-btns-container {
     position: fixed;
     right: 4vw;
-    bottom: 200px;
+    bottom: 100px;
     z-index: 10;
     height: 18vw;
 }
@@ -99,6 +99,13 @@ h2 {
 .nav ul li {
     padding: 5px
 }   
+
+@media screen and (max-width : 1000px) {
+    .nav ul li {
+        font-size: 15px
+    }   
+}
+
 /* header */
 
 
@@ -151,6 +158,16 @@ header section p {
     color: #207D85;
     border-radius: 90px;
 }
+
+@media screen and (max-width : 1000px) {
+    header section:first-of-type {
+        width: 80%;
+    }
+    .main-image-section {
+        display: none;
+    }   
+}
+
 
 /* Nos services */
 
@@ -208,6 +225,11 @@ header section p {
     padding-top: 20px;
     text-align: center;
     line-height: 1.7;
+}
+@media screen and (max-width : 1000px) {
+    #services-cards section {
+        padding: 0 20px;
+    }
 }
 
 /* notre travail component */
@@ -338,6 +360,12 @@ header section p {
     font-size: 16px;
 }
 
+@media screen and (max-width : 1000px) {
+    #tarifs-container section {
+        padding: 50px 2%;
+        width: 32%;
+    }
+}
 /* About component */
 
 #about-container {
@@ -404,6 +432,17 @@ header section p {
     right: 0;
 }
 
+@media screen and (max-width : 1000px) {
+    #about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #about-container section:first-of-type {
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 50px;
+    }
+}
 /* footer */
 
 footer {
