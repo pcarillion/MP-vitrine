@@ -4,24 +4,31 @@ const ToggleMode = ({mode, callback}) => {
 
     const [displayBtns, setDisplayBtns] = useState(false);
 
-    const displayed = {
-        display : 'none'
-    }
-
-    if (displayBtns == true) {
-        displayed.display = 'block'
-    }
-
-
     // btn style
 
+    const main = {
+        backgroundColor: '#F46B47',
+        color: 'white',
+        boxShadow: 'inset 0px 0px 5px 0px rgba(0,0,0,0.75)',
+    }
     const active = {
         backgroundColor: '#F46B47',
-        color: 'white'
+        color: 'white',
+        boxShadow: 'inset 0px 0px 5px 0px rgba(0,0,0,0.75)',
     }
     const inactive = {
-
+        // visibility : 'hidden',
+        // opacity: '0',
     }
+
+
+    
+    // if (displayBtns == true) {
+    //     active.visibility = 'visible'
+    //     active.opacity = '1'
+    //     inactive.visibility = 'visible'
+    //     inactive.opacity = '1'
+    // }
 
     if (mode === 'Paul') {
         inactive.color = 'white'
@@ -30,11 +37,37 @@ const ToggleMode = ({mode, callback}) => {
     }
 
      function toggleDisplay() {
+         const btns = document.querySelectorAll('#toggle-btns div')
         if (displayBtns == false) {
             setDisplayBtns(true)
+            setTimeout(() => {
+                btns[0].style.opacity = '1';
+                btns[0].style.visibility = 'visible';
+            }, 100); 
+            setTimeout(() => {
+                btns[1].style.opacity = '1';
+                btns[1].style.visibility = 'visible';
+            }, 200); 
+            setTimeout(() => {
+                btns[2].style.opacity = '1';
+                btns[2].style.visibility = 'visible';
+            }, 300); 
         } else {
             setDisplayBtns(false)
+            setTimeout(() => {
+                btns[2].style.opacity = '0';
+                btns[2].style.visibility = 'hidden';
+            }, 100); 
+            setTimeout(() => {
+                btns[1].style.opacity = '0';
+                btns[1].style.visibility = 'hidden';
+            }, 200); 
+            setTimeout(() => {
+                btns[0].style.opacity = '0';
+                btns[0].style.visibility = 'hidden';
+            }, 300); 
         }
+        console.log(btns[0])
     }
 
     const handleMode = (e) => {
@@ -49,10 +82,10 @@ const ToggleMode = ({mode, callback}) => {
 
     return (
         <div className='toggle-btns-container'>
-            <div id='main-toggle-btn' onClick={toggleDisplay} style = {active}>
+            <div id='main-toggle-btn' onClick={toggleDisplay} style = {main}>
                 MP
             </div>
-            <div id='toggle-btns' style={ displayed }>
+            <div id='toggle-btns'>
                 <div onClick={handleMode} style = {mode === 'Marine' ? active : inactive}>M</div>
                 <div onClick={handleMode} style = {mode === 'MP' ? active : inactive}>MP</div>
                 <div onClick={handleMode} style = {mode === 'Paul' ? active : inactive}>P</div>

@@ -10,7 +10,7 @@ query {
     image:file(relativePath:{eq:"webdev2.png"}){
       relativePath
       childImageSharp{
-        fluid(quality:90, maxWidth: 4160){
+        fluid(quality:100, maxWidth: 4160){
           ...GatsbyImageSharpFluid
           }
         }
