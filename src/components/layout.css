@@ -1,12 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');
 
 * {
-    font-family: 'Cabin'
+    font-family: 'Alatsi';
+    font-weight: 400;
 }
 
 p, span {
     font-family: 'Old Standard TT', serif;
+}
+
+.orange {
+    color: #F46B47;
+}
+
+.btn {
+    padding: 5px 20px;
+    width: fit-content;
+    border-radius: 90px;
+    background-color: #207D85;
+    color: white;
+    font-family: 'Alatsi';
+    font-weight: 400
 }
 
 /* general classes */
@@ -20,7 +36,7 @@ p, span {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 9vw;
+    padding: 20px 9vw;
     height: 25px;
     position: fixed;
     top: 0;
@@ -35,6 +51,7 @@ p, span {
 
 .nav .logo {
     Font-size: 25px;
+    font-family: 'Alatsi'
 }
 
 .nav ul {
@@ -52,7 +69,6 @@ header {
     flex-direction: row;
     justify-content: space-between;
     padding: 165px 9vw;
-    border-bottom: 0.5px solid black;
 }
 
 header section {
@@ -81,6 +97,23 @@ header section p {
     justify-content: space-between;
 }
 
+.header-btn-1 {
+    background-color: #207D85;
+    width: fit-content;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 90px;
+    color: #FCF3EB;
+}
+
+.header-btn-2 {
+    border: 0.5px solid #207D85;
+    width: fit-content;
+    padding: 5px 20px;
+    color: #207D85;
+    border-radius: 90px;
+}
+
 /* Nos services */
 
 #services-main-container {
@@ -95,7 +128,6 @@ header section p {
     width: 82vw;
     top: -70px;
     height: 600px;
-    border: solid black 0.5px;
     z-index: 2;
     background-color: white;
     padding: 5%;
@@ -122,6 +154,10 @@ header section p {
     padding: 0 50px
 }
 
+#services-cards section  h4{
+    color: #207D85
+}
+
 #services-cards section .services-icone {
     height: 60px;
     width: 60px;
@@ -146,6 +182,8 @@ header section p {
 
 #travail-container h2 {
     margin-bottom: 30px;
+    font-family: 'Alatsi';
+    font-weight: 400
 }
 
 #travail-btns-list {
@@ -172,6 +210,9 @@ header section p {
     flex-direction: column;
     margin: 20px 0;
 }
+#projects-container .project-card h4 {
+    color: #F46B47
+}
 
 #projects-container .project-card .project-image {
     border: 0.5px solid black;
@@ -194,7 +235,6 @@ header section p {
     position: absolute;
     right: 0;
     padding: 5px 20Px;
-    border: 1px solid black;
     border-radius: 90px;
 }
 
@@ -210,6 +250,7 @@ header section p {
 #tarifs-main-container h2 {
     margin-bottom: 50px;
     margin-top: 0;
+    color: #207D85;
 }
 
 #tarifs-container {
@@ -227,10 +268,12 @@ header section p {
     align-items: center;
     box-sizing: border-box;
     padding: 5% 50px;
-    border: 0.5px solid black;
+    background-color: #F7FDFE;
 }
 #tarifs-container section h4{
     margin-top: 0;
+    color: #207D85;
+    font-size: 19px;
 }
 
 #tarifs-container section p {
@@ -245,6 +288,8 @@ header section p {
 #tarifs-container section .price {
     padding-bottom: 20px;
     font-size: 30px;
+    color: #F46B47;
+    font-family: 'Alatsi';
 }
 
 #tarifs-container section .price span{
@@ -255,7 +300,6 @@ header section p {
 
 #about-container {
     padding: 100px 9vw 50px 9vw;
-    border-top: 0.5px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -269,6 +313,9 @@ header section p {
 #about-container section:first-of-type{
     padding-right: 50px;
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #about-container section:first-of-type{
@@ -283,7 +330,7 @@ header section p {
 }
 
 #about-container section p {
-    margin: 30px 0;
+    margin: 30px 0 0 0;
     line-height: 1.4;
 }
 
@@ -323,7 +370,6 @@ footer {
 
 footer #footer-hr {
     position: relative;
-    border-top: 1px solid black;
 }
 
 footer  #footer-logo {

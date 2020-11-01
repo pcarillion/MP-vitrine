@@ -13,12 +13,15 @@ import Footer from './../components/Footer'
 
 
 export default function Home() {
+
+  const Paul = false
+
   return <Layout>
             <Nav></Nav>
 
 {/* Header */}
 
-<Header/>
+<Header Paul={Paul}/>
 
 {/* Nos services  */}
 

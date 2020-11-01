@@ -18,33 +18,45 @@ query {
 }
 `
 
-const Header = () => {
+const Header = ({Paul}) => {
 
     const {image} = useStaticQuery(query);
 
-    console.log(image)
+    const headerStyle = {
+        backgroundColor: '#FCE7D5'
+    }
+
+    const fontStyle ={
+        color: '#F46B47'
+    }
+
+
+    if (Paul) {
+        headerStyle.backgroundColor ='#002C3B'
+    }
+
     return (
-        <header>
-  <section className='title-section'>
-    <h1>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et nibh. 
-    </h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit convallis posuere varius nibh. Risus id duis et purus dui aliquet ut laoreet. Et lacinia sagittis et massa nisl velit ipsum maecenas. Diam vel vestibulum dictum euismod.
-    </p>
-    <div className='header-btns-container'>
-      <div>
-        Demander un devis
-      </div>
-      <div>
-        Voir notre travail
-      </div>
-    </div>
-  </section>
-  <section className='main-image-section'>
-      <Img fluid={image.childImageSharp.fluid} alt="sudfa logo"/>
-  </section>
-</header>
+        <header style = { headerStyle }>
+            <section className='title-section'>
+                <h1 style = {fontStyle}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et nibh. 
+                </h1>
+                <p style = {fontStyle}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit convallis posuere varius nibh. Risus id duis et purus dui aliquet ut laoreet. Et lacinia sagittis et massa nisl velit ipsum maecenas. Diam vel vestibulum dictum euismod.
+                </p>
+                <div className='header-btns-container'>
+                    <div className='header-btn-1'>
+                        Demander un devis
+                    </div>
+                    <div className='header-btn-2'>
+                        Voir notre travail
+                    </div>
+                </div>
+            </section>
+            <section className='main-image-section'>
+                <Img fluid={image.childImageSharp.fluid} alt="sudfa logo"/>
+            </section>
+        </header>
     )
 }
 

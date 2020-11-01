@@ -26,12 +26,17 @@ query {
 `
 const About = () => {
     const {imageMarine, imagePaul} = useStaticQuery(query);
-
+    const bg = {
+        backgroundColor: '#FCE7D5'
+    }
+    const fontColor = {
+        color: '#F46B47'
+    }
     return (
-        <div id="about-container">
+        <div id="about-container" style={bg}>
             <section>
-                <h2>Nous on est des BG alors on parle de nous un peu quand même.</h2>
-                <p>
+                <h2 style = {fontColor}>Nous on est des BG alors on parle de nous un peu quand même.</h2>
+                <p style = {fontColor}>
                     Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
                 </p>
             </section>

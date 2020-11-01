@@ -1,22 +1,34 @@
 import React from 'react'
 
 const Footer = () => {
-
+    const bg = {
+        backgroundColor: '#FCE7D5'
+    }
+    const fontColor = {
+        color: '#207D85'
+    }
+    const logoStyle = {
+        color: '#207D85',
+        backgroundColor: '#FCE7D5'
+    }
+    const hrStyle = {
+        borderTop : 'solid 2px #207D85'
+    }
     return (
-        <footer>
-            <div id='footer-hr'>
-                <div id='footer-logo'>
+        <footer style ={ bg }>
+            <div id='footer-hr' style ={ hrStyle }>
+                <div id='footer-logo' style ={ logoStyle }>
                     &lt; MP &gt;
                 </div>
             </div>
             <div id='footer-container'>
                 <div>
-                    <p>Privacy policy</p>
-                    <p>Terms & Conditions</p>
-                    <p>Allrights reserved P&M</p>
+                    <p style= {fontColor}>Privacy policy</p>
+                    <p style= {fontColor}>Terms & Conditions</p>
+                    <p style= {fontColor}>Allrights reserved P&M</p>
                 </div>
                 <div>
-                    <div>
+                    <div style= {fontColor}>
                         <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                             viewBox="0 0 360.1 359.4" >
                         <path class="st0" d="M248.7,359.3c0-46.4,0-92.4,0-138.8c15.5,0,30.9,0,46.8,0c2.4-18.2,4.7-36.1,7.1-54.5c-18.1,0-35.8,0-53.5,0
@@ -28,7 +40,7 @@ const Footer = () => {
                             C251.1,359.4,250.1,359.3,248.7,359.3z"/>
                         </svg>
                     </div>
-                    <div>
+                    <div style= {fontColor}>
                         <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 	                    viewBox="0 0 384 383.5" >
 
@@ -50,7 +62,7 @@ const Footer = () => {
                         </svg>
 
                     </div>
-                    <div>
+                    <div style= {fontColor}>
                         <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                             viewBox="0 0 406 331.9">
 
@@ -68,9 +80,9 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <p>adressemail@denous.fr</p>
-                    <p>07 67 50 20 39</p>
-                    <p>06 79 75 24 86</p>
+                    <p style= {fontColor}>adressemail@denous.fr</p>
+                    <p style= {fontColor}>07 67 50 20 39</p>
+                    <p style= {fontColor}>06 79 75 24 86</p>
                 </div>
             </div>
         </footer>

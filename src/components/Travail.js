@@ -1,15 +1,29 @@
 import React from 'react'
 
 const Travail = () => {
+
+    const fonth2 = {
+        color: '#207D85',
+    }
+
+    const fontBtn = {
+        color: '#207D85',
+    }
+
+    const moreProjectsStyle = {
+        border: '1px solid #207D85',
+        color: '#207D85',
+    }
+
     return (
         <div id='travail-container'>
-            <h2>Notre travail</h2>
+            <h2 style = { fonth2 }>Notre travail</h2>
             <ul id="travail-btns-list">
-                <li>Tout</li>
-                <li>Web design</li>
-                <li>Développement</li>
-                <li>Branding</li>
-                <li>Maintenance</li>
+                <li style = { fontBtn }>Tout</li>
+                <li style = { fontBtn }>Web design</li>
+                <li style = { fontBtn }>Développement</li>
+                <li style = { fontBtn }>Branding</li>
+                <li style = { fontBtn }>Maintenance</li>
             </ul>
             <div id="projects-container">
                 <div className='project-card'>
@@ -62,7 +76,7 @@ const Travail = () => {
                 </div>
             </div>
             <div className='more-projects-container'>
-                <div>Plus de projets</div>
+                <div style={moreProjectsStyle}>Plus de projets</div>
             </div>
         </div>
     )

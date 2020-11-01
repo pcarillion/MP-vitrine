@@ -10,27 +10,27 @@ const Tarifs = () => {
                     <p className='services-description'>
                         Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
                     </p>
-                    <p>à partir de</p>
+                    <p className='orange'>à partir de</p>
                     <p className="price">1000€</p>
-                    <p>Demander un devis</p>
+                    <p className="btn">Demander un devis</p>
                 </section>
                 <section>
                     <h4>Website complet</h4>
                     <p className='services-description'>
                         Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
                     </p>
-                    <p>à partir de</p>
+                    <p className='orange'>à partir de</p>
                     <p className="price">200€ <span>/jour</span></p>
-                    <p>Demander un devis</p>
+                    <p className="btn">Demander un devis</p>
                 </section>
                 <section>
                     <h4>Maintenance</h4>
                     <p className='services-description'>
                         Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
                     </p>
-                    <p>à partir de</p>
+                    <p className='orange'>à partir de</p>
                     <p className="price">150€ <span>/jour</span></p>
-                    <p>Demander un devis</p>
+                    <p className="btn">Demander un devis</p>
                 </section>
             </div>
         </div>
