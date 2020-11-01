@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
+* {
+    font-family: 'Cabin'
+}
+
+p, span {
+    font-family: 'Old Standard TT', serif;
+}
+
+/* general classes */
+
+
+
+/* Nav */
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 9vw;
+    height: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 82vw;
+    z-index: 10;
+}
+
+.nav * {
+    font-size: 18px;
+}
+
+.nav .logo {
+    Font-size: 25px;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+
+/* header */
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 165px 9vw;
+    border-bottom: 0.5px solid black;
+}
+
+header section {
+    width: 45%;
+}
+
+header section:first-of-type{
+    padding-right: 50px;
+    width: 40%;
+}
+
+header section h1 {
+    font-size: 30px;
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+header section p {
+    margin: 30px 0;
+    line-height: 1.4;
+}
+
+.header-btns-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Nos services */
+
+#services-main-container {
+    position: relative;
+    z-index: 1;
+    min-height: 620px;
+}
+
+#services-container {
+    position: absolute;
+    left: 9vw;
+    width: 82vw;
+    top: -70px;
+    height: 600px;
+    border: solid black 0.5px;
+    z-index: 2;
+    background-color: white;
+    padding: 5%;
+    padding-bottom: 8%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#services-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#services-cards section {
+    width: 33.3%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 50px
+}
+
+#services-cards section .services-icone {
+    height: 60px;
+    width: 60px;
+    border: solid black 0.5px;
+    border-radius: 90px;
+}
+
+#services-cards section p {
+    padding-top: 20px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* notre travail component */
+
+#travail-container {
+    padding: 0 9vw 100px 9vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#travail-container h2 {
+    margin-bottom: 30px;
+}
+
+#travail-btns-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px 90px;
+}
+
+#projects-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#projects-container .project-card  {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+#projects-container .project-card .project-image {
+    border: 0.5px solid black;
+    min-width: 100%;
+    height: auto;
+    position: relative;
+    padding-top: 75%;
+}
+
+#projects-container .project-card .project-image div {
+    position: absolute;
+}
+
+.more-projects-container {
+    width: 100%;
+    position: relative;
+}
+
+.more-projects-container  div{
+    position: absolute;
+    right: 0;
+    padding: 5px 20Px;
+    border: 1px solid black;
+    border-radius: 90px;
+}
+
+/* tarifs */
+
+#tarifs-main-container {
+    padding: 0 9vw 100px 9vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tarifs-main-container h2 {
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+#tarifs-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#tarifs-container section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5% 50px;
+    border: 0.5px solid black;
+}
+#tarifs-container section h4{
+    margin-top: 0;
+}
+
+#tarifs-container section p {
+    text-align: center;
+    line-height: 1.7;
+}
+
+.services-description {
+    padding-bottom: 20px;
+}
+
+#tarifs-container section .price {
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+
+#tarifs-container section .price span{
+    font-size: 16px;
+}
+
+/* About component */
+
+#about-container {
+    padding: 100px 9vw 50px 9vw;
+    border-top: 0.5px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#about-container section {
+    width: 45%;
+    height: 284px;
+}
+
+#about-container section:first-of-type{
+    padding-right: 50px;
+    width: 40%;
+}
+
+#about-container section:first-of-type{
+    padding-right: 50px;
+    width: 40%;
+}
+
+#about-container section h2 {
+    font-size: 30px;
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+#about-container section p {
+    margin: 30px 0;
+    line-height: 1.4;
+}
+
+#about-container section:last-of-type{
+    width: 592px;
+}
+
+#about-images-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#about-images-container > div {
+    width: 50%;
+}
+
+#about-images-container > div > div {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+
+#about-images-container .about-image {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* footer */
+
+footer {
+    padding: 20px 9vw 70px 9vw;
+}
+
+footer #footer-hr {
+    position: relative;
+    border-top: 1px solid black;
+}
+
+footer  #footer-logo {
+    font-size: 25px;
+    position: absolute;
+    top: -18px;
+    left: calc(41vw - 75px);
+    background-color: white;
+    width: 150px;
+    text-align: center;
+    height: 30px;
+}
+
+#footer-container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer-container p {
+    margin-bottom: 5px;
+}
+#footer-container > div {
+    width: 180px;
+}
+
+#footer-container > div:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#footer-container > div:nth-child(2) svg {
+    height: 21px;
+    width: 23px;
+}
+
+
+#footer-container > div:last-child p{
+    text-align: right;
+}
