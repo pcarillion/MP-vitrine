@@ -2,7 +2,6 @@ import React from 'react'
 
 if (typeof window !== 'undefined') {
     window.addEventListener('scroll', function () {
-        console.log(window.pageYOffset)
         if (window.pageYOffset > 10){
             document.getElementsByClassName('nav')[0].style.boxShadow = '0px 4px 20px 0px rgba(0,0,0,0.3)'
         } else if (window.pageYOffset < 10){
@@ -44,10 +43,10 @@ const Nav = ({mode}) => {
                 &lt;MP&gt;
             </div>
             <ul>
-                <li style = { fontColor }>Nos services</li>
-                <li style = { fontColor }>Notre travail</li>
-                <li style = { fontColor }>Tarifs</li>
-                <li style = { fontColor }>A propos</li>
+                <a href="javascript:document.getElementById('services-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>Nos services</li></a>
+                <a href="javascript:document.getElementById('travail-id').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>Notre travail</li></a>
+                <a href="javascript:document.getElementById('tarifs-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>Tarifs</li></a>
+                <a href="javascript:document.getElementById('about-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>A propos</li></a>
                 <li style = { lastBtn }>Demander un devis</li>
             </ul>
         </div>

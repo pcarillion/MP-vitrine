@@ -24,7 +24,7 @@ const Tarifs = ({mode}) => {
 
     return (
         <div id='tarifs-main-container' style = {mainBG}>
-            <h2 style = {fonth2}>Nos Tarifs</h2>
+            <h2 style = {fonth2} id='tarifs-title'>Nos Tarifs</h2>
             <div id='tarifs-container'>
                 <section style = { sectionBG }>
                     <h4>Site Vitrine</h4>

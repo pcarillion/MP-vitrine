@@ -27,6 +27,11 @@ p, span {
 h2 {
     font-size: 29px
 }
+a {
+    color: black;
+    text-decoration: none;
+}
+
 /* general classes */
 
 .btn {
@@ -331,7 +336,11 @@ header section p {
 #travail-btns-list li {
     width: 130px;
     text-align: center;
+    border-radius: 90px;
+    padding: 5px 10px;
 }
+
+
 
 #projects-container {
     width: 100%;
@@ -347,7 +356,11 @@ header section p {
     align-items: center;
     flex-direction: column;
     margin: 20px 0;
+    padding: 0 calc(10% /6)
 }
+
+
+
 #projects-container .project-card h4 {
     color: #F46B47;
     text-align: center;

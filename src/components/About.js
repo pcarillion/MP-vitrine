@@ -42,7 +42,7 @@ const About = ({mode}) => {
     return (
         <div id="about-container" style={bg}>
             <section>
-                <h2 style = {fontColor}>Nous on est des BG alors on parle de nous un peu quand même.</h2>
+                <h2 id="about-title" style = {fontColor}>Nous on est des BG alors on parle de nous un peu quand même.</h2>
                 <p style = {fontColor}>
                     Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
                 </p>

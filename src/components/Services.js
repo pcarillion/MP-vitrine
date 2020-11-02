@@ -32,7 +32,7 @@ const Services = ({mode}) => {
     return (
         <div id='services-main-container' style = {mainBG}>
             <div id='services-container' style={containerBG}>
-                <h2 style = { fonth2 }>
+                <h2 style = { fonth2 } id='services-title'>
                     Nos services
                 </h2>
                 <div id='services-cards'>
