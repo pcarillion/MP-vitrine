@@ -38,6 +38,9 @@ const Travail = ({mode}) => {
     // isotope config
     if (typeof window !== 'undefined') {
 
+		const Isotope = require("isotope-layout/js/isotope");
+
+
     var iso = new Isotope('#projects-container', {
         itemSelector: '.project-card',
         layoutMode: 'fitRows'
