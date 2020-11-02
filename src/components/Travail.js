@@ -36,13 +36,14 @@ const Travail = ({mode}) => {
     }
 
     // isotope config
+    if (typeof window !== 'undefined') {
 
     var iso = new Isotope('#projects-container', {
         itemSelector: '.project-card',
         layoutMode: 'fitRows'
     })
 
-
+}
 
 
 
