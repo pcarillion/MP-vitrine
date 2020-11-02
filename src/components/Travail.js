@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 
-import Isotope from 'isotope-layout/js/isotope'
 
 const Travail = ({mode}) => {
 
