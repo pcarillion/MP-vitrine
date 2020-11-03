@@ -4,6 +4,12 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+ 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
+
 module.exports = {
   /* Your site config here */
   plugins: [
@@ -15,14 +21,14 @@ module.exports = {
     // `gatsby-plugin-playground`,
     // `gatsby-plugin-react-helmet`,
     // `gatsby-plugin-anchor-links`,
-    // {
-    //   resolve: `gatsby-source-contentful`,
-    //   options: {
-    //     spaceId: process.env.SPACE_ID,
-    //     // Learn about environment variables: https://gatsby.dev/env-vars
-    //     accessToken: process.env.ACCESS_TOKEN,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.ACCESS_TOKEN,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

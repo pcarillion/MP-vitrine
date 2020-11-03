@@ -1,9 +1,90 @@
 import React, {useState, useEffect} from 'react'
+import {graphql, useStaticQuery} from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
+
+const query = graphql`
+query{
+	projets:allContentfulProjet{
+        edges{
+            node{
+                titre
+                client
+                categorie
+                annee
+                auteur
+                imagePrincipale{
+                fluid{
+                    ...GatsbyContentfulFluid
+                    }
+                }
+            }
+        }
+    }
+}
+`
 
 
 const Travail = ({mode}) => {
 
+    const {projets} = useStaticQuery(query);
+
+    console.log(projets)
+
     const [btnClicked, setBtnClicked] = useState(0)
+    const [projectsDisplayed, setProjectsDisplayed] = useState([])
+    const [category, setCategory] = useState('all')
+
+    useEffect(() => {
+        if (mode == 'Marine' && category == 'Développement') {
+            setCategory('all')
+        } else if (mode == 'Marine' && category == 'Branding') {
+            setCategory('all')
+        }
+        var array = []
+        if (category === 'all') {
+            projets.edges.map(projet => {
+                if (mode === 'Paul' && projet.node.auteur == 'Paul') {
+                    return array.push(projet)
+                } else if (mode === 'Marine' && projet.node.auteur == 'Marine') {
+                    return array.push(projet)
+                } else if (mode === 'MP' && projet.node.auteur == 'M&P') {
+                    return array.push(projet)
+                }
+            })
+        }
+        else {
+            projets.edges.map(projet => {
+                if (mode === 'Paul' && projet.node.auteur == 'Paul' && projet.node.categorie.includes(category)) {
+                    return array.push(projet)
+                } else if (mode === 'Marine' && projet.node.auteur == 'Marine' && projet.node.categorie.includes(category)) {
+                    return array.push(projet)
+                } else if (mode === 'MP' && projet.node.auteur == 'M&P' && projet.node.categorie.includes(category)) {
+                    return array.push(projet)
+                }
+            })
+        }
+        setProjectsDisplayed(array)
+    }, [mode, category])
+    
+    
+    
+        function handleFilter(e) {
+            var filterBtns = document.querySelectorAll('.filter-btns')
+            for (let i = 0; i < filterBtns.length; i ++) {
+                if (filterBtns[i] === e.target) {
+                    filterBtns[i].style.opacity = "1"
+                } else (
+                    filterBtns[i].style.opacity = "0.4"
+                )
+            }
+            var value = e.target.getAttribute('data-filter')
+            setCategory(value)
+            // console.log(value)
+            // iso.arrange({filter: value})
+        }
+    
+    
+
 
     const mainBG = {
         backgroundColor: 'white'
@@ -11,7 +92,6 @@ const Travail = ({mode}) => {
     const fonth2 = {
         color: '#207D85',
     }
-
     const fontBtn = {
         color: '#207D85',
         opacity : "0.4"
@@ -35,50 +115,43 @@ const Travail = ({mode}) => {
     }
 
     // isotope config
-    if (typeof window !== 'undefined') {
+//     if (typeof window !== 'undefined') {
 
-		const Isotope = require("isotope-layout/js/isotope");
-
-
-    var iso = new Isotope('#projects-container', {
-        itemSelector: '.project-card',
-        layoutMode: 'fitRows'
-    })
-
-}
+// 		const Isotope = require("isotope-layout/js/isotope");
 
 
+//     var iso = new Isotope('#projects-container', {
+//         itemSelector: '.project-card',
+//         layoutMode: 'fitRows'
+//     })
 
-
-    function handleFilter(e) {
-
-        console.log(fontBtn)
-
-        var filterBtns = document.querySelectorAll('.filter-btns')
-        for (let i = 0; i < filterBtns.length; i ++) {
-            if (filterBtns[i] === e.target) {
-                filterBtns[i].style.opacity = "1"
-            } else (
-                filterBtns[i].style.opacity = "0.4"
-            )
-        }
-        var value = e.target.getAttribute('data-filter')
-        iso.arrange({filter: value})
-    }
-
+// }
 
     return (
         <div id='travail-container' style = {mainBG}>
             <h2 style = { fonth2 } id='travail-id'>Notre travail</h2>
             <ul id="travail-btns-list">
-                <li style = { fontBtnDep } onClick={handleFilter} className='filter-btns' data-filter='*'>Tout</li>
-                <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='.web-design'>Web design</li>
-                <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='.developpement'>Développement</li>
-                <li style = { fontBtn } className='filter-btns'>Branding</li>
+                <li style = { fontBtnDep } onClick={handleFilter} className='filter-btns' data-filter='all'>Tout</li>
+                <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Web design'>Web design</li>
+                {mode != 'Marine' && <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Développement'>Développement</li>}
+                {mode != 'Paul' && <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Branding'>Branding</li>}
                 {/* <li style = { fontBtn } className='filter-btns'>Maintenance</li> */}
             </ul>
             <div id="projects-container">
-                <div className='project-card developpement'>
+                {projectsDisplayed.length > 0 && projectsDisplayed.map((project, key) => {
+                    console.log(project)
+                    return <div className='project-card'>
+                    <div className='project-image-div'>
+                            {project.node.imagePrincipale && <BackgroundImage className='project-image' fluid={project.node.imagePrincipale.fluid}/>}
+                    </div>
+                    <h4>
+                        {project.node.titre}
+                    </h4>
+                </div>
+                })}
+                
+
+                {/* <div className='project-card developpement'>
                     <div className='project-image'>
                         <div></div>
                     </div>
@@ -125,7 +198,7 @@ const Travail = ({mode}) => {
                     <h4>
                         Camerashop
                     </h4>
-                </div>
+                </div> */}
             </div>
             <div className='more-projects-container'>
                 <div style={moreProjectsStyle}>Plus de projets</div>
