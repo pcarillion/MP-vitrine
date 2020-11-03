@@ -36,9 +36,9 @@ const Travail = ({mode}) => {
 
     useEffect(() => {
         if (mode == 'Marine' && category == 'Développement') {
-            setCategory('all')
-        } else if (mode == 'Marine' && category == 'Branding') {
-            setCategory('all')
+            document.getElementById('btn-all').click()
+        } else if (mode == 'Paul' && category == 'Branding') {
+            document.getElementById('btn-all').click()
         }
         var array = []
         if (category === 'all') {
@@ -131,7 +131,7 @@ const Travail = ({mode}) => {
         <div id='travail-container' style = {mainBG}>
             <h2 style = { fonth2 } id='travail-id'>Notre travail</h2>
             <ul id="travail-btns-list">
-                <li style = { fontBtnDep } onClick={handleFilter} className='filter-btns' data-filter='all'>Tout</li>
+                <li id = 'btn-all' style = { fontBtnDep } onClick={handleFilter} className='filter-btns' data-filter='all'>Tout</li>
                 <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Web design'>Web design</li>
                 {mode != 'Marine' && <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Développement'>Développement</li>}
                 {mode != 'Paul' && <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Branding'>Branding</li>}
@@ -140,7 +140,7 @@ const Travail = ({mode}) => {
             <div id="projects-container">
                 {projectsDisplayed.length > 0 && projectsDisplayed.map((project, key) => {
                     console.log(project)
-                    return <div className='project-card'>
+                    return <div className='project-card fade-in'>
                     <div className='project-image-div'>
                             {project.node.imagePrincipale && <BackgroundImage className='project-image' fluid={project.node.imagePrincipale.fluid}/>}
                     </div>
