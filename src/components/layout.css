@@ -41,7 +41,15 @@ a {
     background-color: #207D85;
     color: white;
     font-family: 'Alatsi';
-    font-weight: 400
+    font-weight: 400;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color:  #207D85;
+    background-color: white;
+    border: 0.5px solid  #207D85;
 }
 
 .fade-out {
@@ -658,13 +666,98 @@ footer  #footer-logo {
     }
 }
 
+/* contact popin */
+
+.popup-wrapper {
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 15vh 10vw;
+    box-sizing: border-box;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.popup-container {
+    width: 80vw;
+    height: 70vh;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.popup-container h2 {
+    position: absolute;
+    color: #207D85;
+}
+
+
+.popup-container .form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 45%;
+    padding-top: 100px;
+}
+
+.popup-container .form-section input, .popup-container .form-section textarea {
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FCE7D5;
+    width: 100%;
+    font-family: 'Old Standard TT';
+    box-sizing: border-box;
+    transition: none;
+    border: white 0.5px solid;
+}
+
+.project-textarea {
+    height: 60%;
+}
+
+.form-btn-container {
+    width: 100%;
+    position: relative;
+    height: 45px;
+}
+
+.form-btn-container div {
+    position: absolute;
+    right: 0;
+    top: 10px;
+
+}
+
+#close-form {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 1;
+    transition: 0.3s all linear;
+}
+
+#close-form:hover {
+    transform: rotate(90deg);
+    cursor: pointer
+}
 
 /* page notre travail */
 
 .projects-wrapper {
     height: 100%;
     width: 100vw;
-    background-color: red
+    background-color: red;
 }
 
 /* ----------------------------------------------

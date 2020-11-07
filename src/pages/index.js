@@ -13,6 +13,7 @@ import Tarifs from './../components/Tarifs'
 import About from './../components/About'
 import Footer from './../components/Footer'
 
+import Contact from './../components/Contact'
 
 export default function Home() {
 
@@ -28,6 +29,8 @@ export default function Home() {
             <ToggleMode mode={mode} callback={handleMode}/>
             
             <Nav mode={mode}/>
+
+            <Contact open={true}/>
 
             <Header mode={mode}/>
             <Services mode={mode}/>
