@@ -9,14 +9,15 @@ const Nav = ({mode}) => {
             document.getElementsByClassName('nav')[0].style.boxShadow = 'none'
         }
     }
-    console.log(window.location)
     useEffect(() => {
         if (typeof window !== 'undefined') {
             window.addEventListener('scroll', nav_shadow)
         }
         return () => {
-            window.removeEventListener('scroll', nav_shadow)
-            console.log("cleaned")
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('scroll', nav_shadow)
+                console.log("cleaned")
+            }
         }
     }, [])
 
