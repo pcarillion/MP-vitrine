@@ -18,7 +18,7 @@ query {
 }
 `
 
-const Header = ({mode}) => {
+const Header = ({mode, openModal}) => {
 
     const {image} = useStaticQuery(query);
 
@@ -49,12 +49,14 @@ const Header = ({mode}) => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit convallis posuere varius nibh. Risus id duis et purus dui aliquet ut laoreet. Et lacinia sagittis et massa nisl velit ipsum maecenas. Diam vel vestibulum dictum euismod.
                 </p>
                 <div className='header-btns-container'>
-                    <div className='header-btn-1'>
+                    <div className='header-btn-1 btn' onClick={() => openModal(true)}>
                         Demander un devis
                     </div>
-                    <div className='header-btn-2'>
-                        Voir notre travail
-                    </div>
+                    <a href="javascript:document.getElementById('travail-id').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});">
+                        <div className='header-btn-2'>
+                            Voir notre travail
+                        </div>
+                    </a>
                 </div>
             </section>
             <section className='main-image-section'>

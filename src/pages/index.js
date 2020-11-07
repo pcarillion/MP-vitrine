@@ -18,21 +18,25 @@ import Contact from './../components/Contact'
 export default function Home() {
 
   const [mode, setMode] = useState('MP')
+  const[contactModalOpened, setModal] = useState(false)
 
   function handleMode (x) {
     setMode(x)
   }
 
+  function handleModal(x) {
+    setModal(x)
+  }
 
   return <Layout>
             
             <ToggleMode mode={mode} callback={handleMode}/>
             
-            <Nav mode={mode}/>
+            <Nav mode={mode} openModal={handleModal}/>
 
-            <Contact open={true}/>
+            <Contact open={contactModalOpened} openModal={handleModal}/>
 
-            <Header mode={mode}/>
+            <Header mode={mode} openModal={handleModal}/>
             <Services mode={mode}/>
             <Travail mode={mode} composant={true}/>
             <Tarifs mode={mode}/>

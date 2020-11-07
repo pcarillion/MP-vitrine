@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 
 
-const Nav = ({mode}) => {
+const Nav = ({mode, openModal}) => {
     function nav_shadow() {
         if (window.pageYOffset > 10 ){
             document.getElementsByClassName('nav')[0].style.boxShadow = '0px 4px 20px 0px rgba(0,0,0,0.3)'
@@ -22,9 +22,6 @@ const Nav = ({mode}) => {
     }, [])
 
 
-    
-    console.log(window.location)
-
     const bgNav = {
         backgroundColor: "#FCE7D5"
     }
@@ -33,14 +30,14 @@ const Nav = ({mode}) => {
         color: '#207D85'
     }
 
-    const lastBtn = {
-        color: '#FCF3EB',
-        backgroundColor: '#207D85',
-        width: 'fitContent',
-        textAlign: 'center',
-        padding: '5px 20px',
-        borderRadius: '90px'
-    }
+    // const lastBtn = {
+    //     color: '#FCF3EB',
+    //     backgroundColor: '#207D85',
+    //     width: 'fitContent',
+    //     textAlign: 'center',
+    //     padding: '5px 20px',
+    //     borderRadius: '90px'
+    // }
 
     if (mode === "Paul") {
         bgNav.backgroundColor = '#002C3B'
@@ -58,7 +55,7 @@ const Nav = ({mode}) => {
                 <a href="javascript:document.getElementById('travail-id').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>Notre travail</li></a>
                 <a href="javascript:document.getElementById('tarifs-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>Tarifs</li></a>
                 <a href="javascript:document.getElementById('about-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>A propos</li></a>
-                <li style = { lastBtn }>Demander un devis</li>
+                <li className='btn' onClick={() => openModal(true)}>Demander un devis</li>
             </ul>
         </div>
     )

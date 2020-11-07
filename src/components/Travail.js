@@ -112,7 +112,6 @@ const Travail = ({mode, composant}) => {
 
     const moreProjectsStyle = {
         border: '1px solid #207D85',
-        color: '#207D85',
     }
 
     const clickedBorder = {
@@ -121,7 +120,6 @@ const Travail = ({mode, composant}) => {
 
     const retourBtn = {
         border: '1px solid #207D85',
-        color: '#207D85',
         left: '0',
         position: 'fixed',
         padding: '5px 20px', 
@@ -152,7 +150,7 @@ const Travail = ({mode, composant}) => {
     return (
         <div id='travail-container' style = {mainBG}>
             {composant == false && 
-                <AniLink to='/' style={retourBtn}>Retour</AniLink>
+                <AniLink to='/' style={retourBtn} className='btn2'>Retour</AniLink>
             }
             <h2 style = { fonth2 } id='travail-id'>
                 {mode === 'MP' ? "Notre travail" : `Le travail de ${mode}`}
@@ -179,7 +177,7 @@ const Travail = ({mode, composant}) => {
                 })}
             </div>
             {composant == true && <div className='more-projects-container'>
-                <AniLink to='/notre-travail' style={moreProjectsStyle}>Plus de projets</AniLink>
+                <AniLink to='/notre-travail' style={moreProjectsStyle} className='btn2'>Plus de projets</AniLink>
             </div>}
         </div>
     )

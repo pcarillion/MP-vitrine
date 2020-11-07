@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import emailjs from 'emailjs-com'
 
-const Contact = ({open}) => {
+const Contact = ({open, openModal}) => {
+    console.log(open)
     const [mail, setMail] = useState({
         email: "",
         name: "",
@@ -43,7 +44,7 @@ const Contact = ({open}) => {
         // } catch (err) {   
 
         // }
-        emailjs.send('3439D9FF76F21C0DFE1D4535', 'template_va4ZOk7C', mail, 'user_DlYdoyEkxwf84MFRThvCk')
+        emailjs.send('3439D9FF76F21C0DFE1D4535', 'template_okstuxs', mail, 'user_DlYdoyEkxwf84MFRThvCk')
             .then((result) => {
                 console.log(result)
             }, (error) => {
@@ -56,21 +57,20 @@ const Contact = ({open}) => {
       }
 
       useEffect(() => {
-          if (open = true) {
+          if (open == true) {
             document.getElementsByTagName('body')[0].style.overflow ='hidden'
+            document.getElementById('popup').style.display = 'block'
+          } else if (open == false) {
+            document.getElementById('popup').style.display = 'none'
+            document.getElementsByTagName('body')[0].style.overflow ='auto'
           }
-          return () => {
-            if (open = true) {
-                document.getElementsByTagName('body')[0].style.overflow ='auto'
-              }
-          }
-      }, open)
+      }, [open])
 
     return (
-        <div className='popup-wrapper'>
+        <div className='popup-wrapper' id ='popup'>
             <form className='popup-container' onChange={handleChange} onSubmit={handleSubmit} data-netlify='true'>
                 <h2>Demander un devis</h2>  
-                <div id='close-form'>&#10006;</div>
+                <div id='close-form' onClick={() => openModal(false)}>&#10006;</div>
                     <div className='form-section'>
                         <h3 className='orange'>Informations</h3>
                         <input type='text' id='input-name' name='name' placeholder='Nom prénom *'/>
