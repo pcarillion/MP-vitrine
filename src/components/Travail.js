@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {graphql, useStaticQuery} from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
 
 const query = graphql`
 query{
@@ -24,7 +26,12 @@ query{
 `
 
 
-const Travail = ({mode}) => {
+const Travail = ({mode, composant}) => {
+
+    var limit = 100;
+    if (composant == true) {
+        limit = 6;
+    }
 
     const {projets} = useStaticQuery(query);
 
@@ -35,10 +42,9 @@ const Travail = ({mode}) => {
     const [category, setCategory] = useState('all')
 
     useEffect(() => {
-        if (mode == 'Marine' && category == 'Développement') {
+        if ((mode == 'Marine' && category == 'Développement') || (mode == 'Paul' && category == 'Branding')) {
             document.getElementById('btn-all').click()
-        } else if (mode == 'Paul' && category == 'Branding') {
-            document.getElementById('btn-all').click()
+            setBtnClicked(1)
         }
         var array = []
         if (category === 'all') {
@@ -63,6 +69,7 @@ const Travail = ({mode}) => {
                 }
             })
         }
+        document.querySelectorAll('.filter-btns')[btnClicked].click()
         setProjectsDisplayed(array)
     }, [mode, category])
     
@@ -73,9 +80,12 @@ const Travail = ({mode}) => {
             for (let i = 0; i < filterBtns.length; i ++) {
                 if (filterBtns[i] === e.target) {
                     filterBtns[i].style.opacity = "1"
-                } else (
+                    filterBtns[i].style.border = clickedBorder.border
+                    setBtnClicked(i)
+                } else {
                     filterBtns[i].style.opacity = "0.4"
-                )
+                    filterBtns[i].style.border = "solid 1px rgba(0,0,0,0)"
+                }
             }
             var value = e.target.getAttribute('data-filter')
             setCategory(value)
@@ -94,11 +104,9 @@ const Travail = ({mode}) => {
     }
     const fontBtn = {
         color: '#207D85',
-        opacity : "0.4"
-    }
-    const fontBtnDep = {
-        color: '#207D85',
-        opacity : "1"
+        opacity : "0.4",
+        border: 'solid 1px rgba(0,0,0,0)',
+        cursor: 'pointer'
     }
 
 
@@ -107,11 +115,25 @@ const Travail = ({mode}) => {
         color: '#207D85',
     }
 
+    const clickedBorder = {
+        border: '1px solid #207D85'
+    }
+
+    const retourBtn = {
+        border: '1px solid #207D85',
+        color: '#207D85',
+        left: '0',
+        position: 'fixed',
+        padding: '5px 20px', 
+        borderRadius: '90px',
+        margin: '24px 30px'
+    }
+
     if (mode === 'Paul') {
         mainBG.backgroundColor= '#333333'
         fonth2.color = '#F46B47'
         fontBtn.color = '#FCF3EB'
-        fontBtnDep.color = '#FCF3EB'
+        clickedBorder.border = '1px solid #FCF3EB'
     }
 
     // isotope config
@@ -129,18 +151,23 @@ const Travail = ({mode}) => {
 
     return (
         <div id='travail-container' style = {mainBG}>
-            <h2 style = { fonth2 } id='travail-id'>Notre travail</h2>
+            {composant == false && 
+                <AniLink to='/' style={retourBtn}>Retour</AniLink>
+            }
+            <h2 style = { fonth2 } id='travail-id'>
+                {mode === 'MP' ? "Notre travail" : `Le travail de ${mode}`}
+            </h2>
             <ul id="travail-btns-list">
-                <li id = 'btn-all' style = { fontBtnDep } onClick={handleFilter} className='filter-btns' data-filter='all'>Tout</li>
+                <li id = 'btn-all' style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='all'>Tout</li>
                 <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Web design'>Web design</li>
                 {mode != 'Marine' && <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Développement'>Développement</li>}
-                {mode != 'Paul' && <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Branding'>Branding</li>}
+                {mode != 'Paul' && mode != 'MP' && <li style = { fontBtn } onClick={handleFilter} className='filter-btns' data-filter='Branding'>Branding</li>}
                 {/* <li style = { fontBtn } className='filter-btns'>Maintenance</li> */}
             </ul>
             <div id="projects-container">
-                {projectsDisplayed.length > 0 && projectsDisplayed.map((project, key) => {
-                    console.log(project)
-                    return <div className='project-card fade-in'>
+                {projectsDisplayed.length > 0 && projectsDisplayed.map((project, i) => {
+                    if (i < limit) {
+                        return <div className='project-card fade-in' key={i}>
                     <div className='project-image-div'>
                             {project.node.imagePrincipale && <BackgroundImage className='project-image' fluid={project.node.imagePrincipale.fluid}/>}
                     </div>
@@ -148,61 +175,12 @@ const Travail = ({mode}) => {
                         {project.node.titre}
                     </h4>
                 </div>
+                    }
                 })}
-                
-
-                {/* <div className='project-card developpement'>
-                    <div className='project-image'>
-                        <div></div>
-                    </div>
-                    <h4>
-                        Thomas Jardin Photographie
-                    </h4>
-                </div>
-                <div className='project-card web-design'>
-                    <div className='project-image'>
-                        <div></div>
-                    </div>
-                    <h4>
-                        MUS
-                    </h4>
-                </div>
-                <div className='project-card developpement'>
-                    <div className='project-image'>
-                        <div></div>
-                    </div>
-                    <h4>
-                        El Rap El Arabi
-                    </h4>
-                </div>
-                <div className='project-card developpement'>
-                    <div className='project-image'>
-                        <div></div>
-                    </div>
-                    <h4>
-                        Mission Climat
-                    </h4>
-                </div>
-                <div className='project-card web-design'>
-                    <div className='project-image'>
-                        <div></div>
-                    </div>
-                    <h4>
-                        Gris
-                    </h4>
-                </div>
-                <div className='project-card web-design'>
-                    <div className='project-image'>
-                        <div></div>
-                    </div>
-                    <h4>
-                        Camerashop
-                    </h4>
-                </div> */}
             </div>
-            <div className='more-projects-container'>
-                <div style={moreProjectsStyle}>Plus de projets</div>
-            </div>
+            {composant == true && <div className='more-projects-container'>
+                <AniLink to='/notre-travail' style={moreProjectsStyle}>Plus de projets</AniLink>
+            </div>}
         </div>
     )
 }

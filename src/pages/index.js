@@ -27,12 +27,14 @@ export default function Home() {
             
             <ToggleMode mode={mode} callback={handleMode}/>
             
-<Nav mode={mode}/>
-<Header mode={mode}/>
-<Services mode={mode}/>
-<Travail mode={mode}/>
-<Tarifs mode={mode}/>
-<About mode={mode}/>
-<Footer mode={mode}/>
+            <Nav mode={mode}/>
+
+            <Header mode={mode}/>
+            <Services mode={mode}/>
+            <Travail mode={mode} composant={true}/>
+            <Tarifs mode={mode}/>
+            <About mode={mode}/>
+            
+            <Footer mode={mode}/>
   </Layout>
 }

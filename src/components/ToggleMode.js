@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 const ToggleMode = ({mode, callback}) => {
 
     const [displayBtns, setDisplayBtns] = useState(false);
+
+    const [mainBtnContent, setContent] = useState('MP')
 
     // btn style
 
@@ -21,7 +23,15 @@ const ToggleMode = ({mode, callback}) => {
         // opacity: '0',
     }
 
-
+    useEffect(() => {
+        if (mode === 'Paul') {
+            setContent('P')
+        } else if (mode === 'Marine') {
+            setContent('M')
+        } else if (mode === 'Paul') {
+            setContent('MP')
+        }
+     }, mode)
     
     // if (displayBtns == true) {
     //     active.visibility = 'visible'
@@ -34,6 +44,8 @@ const ToggleMode = ({mode, callback}) => {
         inactive.color = 'white'
         active.color = '#207D85'
         active.backgroundColor = 'rgb(252, 243, 235)'
+        main.color = '#207D85'
+        main.backgroundColor = 'rgb(252, 243, 235)'
     }
 
      function toggleDisplay() {
@@ -82,7 +94,7 @@ const ToggleMode = ({mode, callback}) => {
     return (
         <div className='toggle-btns-container'>
             <div id='main-toggle-btn' onClick={toggleDisplay} style = {main}>
-                MP
+                {mainBtnContent}
             </div>
             <div id='toggle-btns'>
                 <div onClick={handleMode} style = {mode === 'Marine' ? active : inactive}>M</div>

@@ -1,18 +1,28 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
-if (typeof window !== 'undefined') {
-    window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 10){
+
+const Nav = ({mode}) => {
+    function nav_shadow() {
+        if (window.pageYOffset > 10 ){
             document.getElementsByClassName('nav')[0].style.boxShadow = '0px 4px 20px 0px rgba(0,0,0,0.3)'
         } else if (window.pageYOffset < 10){
             document.getElementsByClassName('nav')[0].style.boxShadow = 'none'
         }
-    })
-}
+    }
+    console.log(window.location)
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', nav_shadow)
+        }
+        return () => {
+            window.removeEventListener('scroll', nav_shadow)
+            console.log("cleaned")
+        }
+    }, [])
 
 
-const Nav = ({mode}) => {
-
+    
+    console.log(window.location)
 
     const bgNav = {
         backgroundColor: "#FCE7D5"
