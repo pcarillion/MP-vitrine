@@ -39,7 +39,7 @@ export default function Home() {
             <Header mode={mode} openModal={handleModal}/>
             <Services mode={mode}/>
             <Travail mode={mode} composant={true}/>
-            <Tarifs mode={mode}/>
+            <Tarifs mode={mode} openModal={handleModal}/>
             <About mode={mode}/>
             
             <Footer mode={mode}/>

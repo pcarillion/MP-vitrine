@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tarifs = ({mode}) => {
+const Tarifs = ({mode, openModal}) => {
 
     const mainBG = {
         backgroundColor : 'white'
@@ -33,7 +33,7 @@ const Tarifs = ({mode}) => {
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">1000€</p>
-                    <p className="btn">Demander un devis</p>
+                    <p className="btn" onClick={() => openModal(true)}>Demander un devis</p>
                 </section>
                 <section style = { sectionBG }>
                     <h4>Website complet</h4>
@@ -42,7 +42,7 @@ const Tarifs = ({mode}) => {
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">200€ <span>/jour</span></p>
-                    <p className="btn">Demander un devis</p>
+                    <p className="btn" onClick={() => openModal(true)}>Demander un devis</p>
                 </section>
                 <section style = { sectionBG }>
                     <h4>Maintenance</h4>
@@ -51,7 +51,7 @@ const Tarifs = ({mode}) => {
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">150€ <span>/jour</span></p>
-                    <p className="btn">Demander un devis</p>
+                    <p className="btn" onClick={() => openModal(true)}>Demander un devis</p>
                 </section>
             </div>
         </div>
