@@ -42,9 +42,12 @@ const About = ({mode}) => {
     return (
         <div id="about-container" style={bg}>
             <section>
-                <h2 id="about-title" style = {fontColor}>Nous on est des BG alors on parle de nous un peu quand même.</h2>
+                <h2 id="about-title" style = {fontColor}>
+                    Deux professionnel.les qui sauront être à l'écoute de votre besoin
+                </h2>
                 <p style = {fontColor}>
-                    Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
+                    Nous sommes salarié.es de l'entreprise <a href='www.ringover.fr' target='_blanck' className='orange'>Ringover</a>, Marine en tant que graphiste et Paul en tant que dev fullstack.
+                    Nous avons l'habitude de travailler ensemble, et surtout nous sommes ami.es. Passionné.es par notre métier, nous attendons vos projets avec impatience. 
                 </p>
             </section>
             <section id='about-images-container'>

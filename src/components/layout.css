@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 * {
     font-family: 'Alatsi';
     font-weight: 400;
@@ -22,6 +22,10 @@ p, span {
 
 .orange {
     color: #F46B47;
+}
+
+.green {
+    color: #207D85;
 }
 
 h2 {
@@ -80,6 +84,12 @@ a {
 	        animation: fade-in 2.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
+.kenburns-top {
+	-webkit-animation: kenburns-top 10s ease-out both;
+	        animation: kenburns-top 10s ease-out both;
+}
+
+
 /* toggle buttons */
 
 .toggle-btns-container {
@@ -118,7 +128,12 @@ a {
 }
 
 
+@media screen and (max-width : 700px) {
+    .toggle-btns-container {
+        bottom: 300px;
+    }
 
+}
 
 /* Nav */
 
@@ -157,17 +172,83 @@ a {
     padding: 5px
 }   
 
+.menu-mobile-div {
+    height: 28px;
+    width: 40px;
+    position: relative;
+    display: none;
+}
+.menu-mobile-div div:first-child {
+    width: 100%;
+    height: 0;
+    border-top: 2px solid #207D85;
+    position: absolute;
+    top: 0; 
+    right: 0;
+    border-radius: 90px
+}
+
+.menu-mobile-div div:last-child {
+    width: 100%;
+    height: 0;
+    border-top: 2px solid #207D85;
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+    border-radius: 90px
+}
+
+.menu-mobile-div div:nth-child(2){
+    width: 50%;
+    height: 0;
+    border-top: 2px solid #207D85;
+    position: absolute;
+    top: calc(50% - 1px); 
+    right: 0;
+    border-radius: 90px
+}
+
+/* .menu-mobile-div:hover div:first-child {
+    transform: rotate(-45deg);
+    top: calc(50% - 1px);
+}
+.menu-mobile-div:hover div:last-child {
+    transform: rotate(45deg);
+    bottom: calc(50% - 1px);
+}
+.menu-mobile-div:hover div:nth-child(2) {
+    opacity: 0;
+} */
 @media screen and (max-width : 1000px) {
     .nav ul li {
         font-size: 15px
     }   
     .nav ul {
-        min-width: 500px
+        min-width: 500px;
+        overflow: hidden;
+
     }
 }
 
 @media screen and (max-width : 700px) {
+    .menu-mobile-div {
+        display: block;
+    }
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        height: 0;
+        margin: 0;
+        min-width: 65%;
+        padding-left: 0;
+    }
+    .nav ul li {
+        margin: 20px 0;
+    }
+    .nav {
 
+        align-items: flex-start;
+    }
 }
 
 /* header */
@@ -310,7 +391,7 @@ header section p {
 #services-cards section .services-icone {
     height: 60px;
     width: 60px;
-    border: solid black 0.5px;
+    /* border: solid black 0.5px; */
     border-radius: 90px;
 }
 
@@ -424,6 +505,24 @@ header section p {
     top: 0;
     left: 0;
 }
+#projects-container .plus-div {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    font-size: 100px;
+    font-weight: 300;
+    text-align: center;
+    padding-top: calc(10% - 35px);
+    opacity: 0;
+    font-family: 'Open sans';
+}
+#projects-container .project-card:hover .plus-div {
+    opacity: 1;
+}
 
 .project-image {
     height: 100%;
@@ -443,21 +542,6 @@ header section p {
     border-radius: 90px;
     margin-right: calc(10% /6);
 }
-@media screen and (max-width : 510px) {
-    #travail-btns-list {
-        padding: 10px 0;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    #travail-btns-list li {
-        width: fit-content;
-        margin: 5px 7px;
-    }
-    #projects-container .project-card{
-        width: 47%;
-        margin-bottom: 0;
-    }
-}
 
 
 @media screen and (max-width : 800px) {
@@ -470,9 +554,24 @@ header section p {
     #projects-container .project-card {
         width: 45%;
     }
-
+    
 }
 
+@media screen and (max-width : 510px) {
+    #travail-btns-list {
+        padding: 10px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #travail-btns-list li {
+        width: fit-content;
+        margin: 5px 7px;
+    }
+    #projects-container .project-card{
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
 /* tarifs */
 
 #tarifs-main-container {
@@ -872,6 +971,40 @@ footer  #footer-logo {
     }
     100% {
       opacity: 0;
+    }
+  }
+  
+/**
+ * ----------------------------------------
+ * animation kenburns-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes kenburns-top {
+    0% {
+      -webkit-transform: scale(1) translateY(0);
+              transform: scale(1) translateY(0);
+      -webkit-transform-origin: 50% 16%;
+              transform-origin: 50% 16%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateY(-15px);
+              transform: scale(1.25) translateY(-15px);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+    }
+  }
+  @keyframes kenburns-top {
+    0% {
+      -webkit-transform: scale(1) translateY(0);
+              transform: scale(1) translateY(0);
+      -webkit-transform-origin: 50% 16%;
+              transform-origin: 50% 16%;
+    }
+    100% {
+      -webkit-transform: scale(1.25) translateY(-15px);
+              transform: scale(1.25) translateY(-15px);
+      -webkit-transform-origin: top;
+              transform-origin: top;
     }
   }
   

@@ -1,6 +1,39 @@
 import React from 'react'
+import {graphql, useStaticQuery} from 'gatsby'
 
+
+import Img from 'gatsby-image'
+
+const query = graphql`
+query {
+    design:file(relativePath:{eq:"design.png"}){
+        relativePath
+        childImageSharp{
+          fluid(quality:100, maxWidth: 4160){
+            ...GatsbyImageSharpFluid
+            }
+          }
+    }
+    developpement:file(relativePath:{eq:"developpement.png"}){
+      relativePath
+      childImageSharp{
+        fluid(quality:100, maxWidth: 4160){
+          ...GatsbyImageSharpFluid
+          }
+        }
+  }
+  maintenance:file(relativePath:{eq:"maintenance.png"}){
+    relativePath
+    childImageSharp{
+      fluid(quality:100, maxWidth: 4160){
+        ...GatsbyImageSharpFluid
+        }
+      }
+}
+}
+`
 const Services = ({mode}) => {
+    const {design, developpement, maintenance} = useStaticQuery(query);
 
     const mainBG = {
         backgroundColor: 'white'
@@ -40,7 +73,7 @@ const Services = ({mode}) => {
                         <h4>
                             UX/UI Design
                         </h4>
-                        <div className="services-icone"></div>
+                        <div className="services-icone"><Img fluid={design.childImageSharp.fluid} alt="logo design"/></div>
                         <p style = { fontP}>
                             Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
                         </p>
@@ -49,18 +82,18 @@ const Services = ({mode}) => {
                         <h4>
                             Développement
                         </h4>
-                        <div className="services-icone"></div>
+                        <div className="services-icone"><Img fluid={developpement.childImageSharp.fluid} alt="logo dev"/></div>
                         <p style = { fontP}>
-                            Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
+                            Le développement peut se faire sur du Wordpress et PHP, mais nous préférons utiliser des technologies nouvelles, performantes et écologiques, notamment la jamstack. 
                         </p>
                     </section>
                     <section>
                         <h4>
                             Maintenance
                         </h4>
-                        <div className="services-icone"></div>
+                        <div className="services-icone"><Img fluid={maintenance.childImageSharp.fluid} alt="logo maintenance"/></div>
                         <p  style = { fontP}>
-                            Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
+                            Une fois votre site web livré, nous ne vous abandonnons pas. Nous vous accompagnons dans vos désirs de changement et vos besoins de maintenance, que nous soyons où non les concepteurs d'origine. 
                         </p>
                     </section>
                 </div>

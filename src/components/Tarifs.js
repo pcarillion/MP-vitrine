@@ -29,7 +29,7 @@ const Tarifs = ({mode, openModal}) => {
                 <section style = { sectionBG }>
                     <h4>Site Vitrine</h4>
                     <p className='services-description'>
-                        Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
+                        Site web fait sur mesure, composé d'une à plusieurs pages, avec la possibilité d'avoir un dashboard intuitif qui permet d'administrer et d'éditer le contenu du site. 
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">1000€</p>
@@ -38,7 +38,7 @@ const Tarifs = ({mode, openModal}) => {
                 <section style = { sectionBG }>
                     <h4>Website complet</h4>
                     <p className='services-description'>
-                        Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
+                        Site web complet avec un dashboard pour l'administration, des plugins d'e-commerce pour la vente de produits. Conception graphique et accompagnement dans la prise en main. 
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">200€ <span>/jour</span></p>
@@ -47,7 +47,7 @@ const Tarifs = ({mode, openModal}) => {
                 <section style = { sectionBG }>
                     <h4>Maintenance</h4>
                     <p className='services-description'>
-                        Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
+                        Que votre site ait été conçu ou non par nos soins, nous pouvons réparer les bugs ou répondre aux besoins qui sont les vôtres en fonction de l'évolution de votre activité. 
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">150€ <span>/jour</span></p>

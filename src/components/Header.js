@@ -43,10 +43,10 @@ const Header = ({mode, openModal}) => {
         <header style = { headerStyle }>
             <section className='title-section'>
                 <h1 style = {fontStyle}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et nibh. 
+                MP, Marine et Paul, designeuse et développeur de sites web 
                 </h1>
                 <p style = {fontStyle}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit convallis posuere varius nibh. Risus id duis et purus dui aliquet ut laoreet. Et lacinia sagittis et massa nisl velit ipsum maecenas. Diam vel vestibulum dictum euismod.
+                Une designeuse et un développeur s'associent pour créer et développer des sites web faits sur mesure. De la conception graphique au déploiement, nous répondons à votre besoin spécifique, pour un prix plus que raisonnable. 
                 </p>
                 <div className='header-btns-container'>
                     <div className='header-btn-1 btn' onClick={() => openModal(true)}>
@@ -60,7 +60,7 @@ const Header = ({mode, openModal}) => {
                 </div>
             </section>
             <section className='main-image-section'>
-                <Img fluid={image.childImageSharp.fluid} alt="sudfa logo"/>
+                <Img fluid={image.childImageSharp.fluid} alt="presentation MP"/>
             </section>
         </header>
     )

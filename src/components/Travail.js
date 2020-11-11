@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {graphql, useStaticQuery} from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
@@ -19,6 +19,7 @@ query{
                     ...GatsbyContentfulFluid
                     }
                 }
+                slug
             }
         }
     }
@@ -32,7 +33,7 @@ const Travail = ({mode, composant}) => {
     if (composant == true) {
         limit = 6;
     }
-
+    const projectImages = useRef(null);
     const {projets} = useStaticQuery(query);
 
     console.log(projets)
@@ -71,8 +72,15 @@ const Travail = ({mode, composant}) => {
         }
         document.querySelectorAll('.filter-btns')[btnClicked].click()
         setProjectsDisplayed(array)
+        
+        document.querySelectorAll('.project-image').forEach((node) => {
+            node.addEventListener('mouseover', () => {
+
+            })
+        })
+
     }, [mode, category])
-    
+ 
     
     
         function handleFilter(e) {
@@ -164,15 +172,17 @@ const Travail = ({mode, composant}) => {
             </ul>
             <div id="projects-container">
                 {projectsDisplayed.length > 0 && projectsDisplayed.map((project, i) => {
+                    var slug = project.node.slug? `/${slug}` : '/'
                     if (i < limit) {
-                        return <div className='project-card fade-in' key={i}>
+                        return <AniLink to className='project-card fade-in' key={i} to={slug}>
                     <div className='project-image-div'>
                             {project.node.imagePrincipale && <BackgroundImage className='project-image' fluid={project.node.imagePrincipale.fluid}/>}
+                            <div className="plus-div">+</div>
                     </div>
                     <h4>
                         {project.node.titre}
                     </h4>
-                </div>
+                </AniLink>
                     }
                 })}
             </div>
