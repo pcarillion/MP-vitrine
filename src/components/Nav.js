@@ -67,13 +67,15 @@ const Nav = ({mode, openModal}) => {
     if (typeof window !== 'undefined' && window.innerWidth < 700) {
     if (isOpen) {
         menuMobileDiv1.transform = 'rotate(-45deg)'
-        menuMobileDiv1.top = 'calc(50% - 1px)'
+        menuMobileDiv1.top = 'calc(50% - 1.5px)'
         menuMobileDiv3.transform = 'rotate(45deg)'
-        menuMobileDiv3.bottom = 'calc(50% - 1px)'
+        menuMobileDiv3.bottom = 'calc(50% - 1.5px)'
         menuMobileDiv2.opacity = '0'
-        menuList.height = "350px"
+        menuList.height = "270px"
+        menuList.marginTop = "70px"
         bgNav. boxShadow = '0px 4px 20px 0px rgba(0,0,0,0.3)'
         bgNav.height = "350px"
+        // menuList.width = 'auto'
         listElement.opacity = '1'
     } if (!isOpen) {
         menuMobileDiv1.transform = ''
@@ -82,6 +84,7 @@ const Nav = ({mode, openModal}) => {
         menuMobileDiv3.bottom = '0'
         menuMobileDiv2.opacity = '1'
         menuList.height = "0"
+        // menuList.minWidth = '0'
         bgNav.height = ""
         // bgNav. boxShadow = 'none'
         listElement.opacity = '0'
@@ -94,16 +97,16 @@ const Nav = ({mode, openModal}) => {
                 &lt;MP&gt;
             </div>
             <ul style={menuList}>
-                <a style={listElement} href="javascript:document.getElementById('services-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>Nos services</li></a>
-                <a style={listElement} href="javascript:document.getElementById('travail-id').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>Notre travail</li></a>
-                <a style={listElement} href="javascript:document.getElementById('tarifs-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>Tarifs</li></a>
-                <a style={listElement} href="javascript:document.getElementById('about-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor }>A propos</li></a>
+                <a style={listElement} href="javascript:document.getElementById('services-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor } onClick={toggleNav}>Nos services</li></a>
+                <a style={listElement} href="javascript:document.getElementById('travail-id').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor } onClick={toggleNav}>Notre travail</li></a>
+                <a style={listElement} href="javascript:document.getElementById('tarifs-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor } onClick={toggleNav}>Tarifs</li></a>
+                <a style={listElement} href="javascript:document.getElementById('about-title').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});"><li style = { fontColor } onClick={toggleNav}>A propos</li></a>
                 <li style={listElement} className='btn' onClick={() => openModal(true)}>Demander un devis</li>
             </ul>
                 <div  style={menuMobileDiv}className='menu-mobile-div' onClick={toggleNav}>
-                    <div style={menuMobileDiv1}></div>
-                    <div style={menuMobileDiv2}></div>
-                    <div style={menuMobileDiv3}></div>
+                        <div style={menuMobileDiv1}></div>
+                        <div style={menuMobileDiv2}></div>
+                        <div style={menuMobileDiv3}></div>
                 </div>
         </div>
     )

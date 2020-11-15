@@ -172,9 +172,9 @@ const Travail = ({mode, composant}) => {
             </ul>
             <div id="projects-container">
                 {projectsDisplayed.length > 0 && projectsDisplayed.map((project, i) => {
-                    var slug = project.node.slug? `/${slug}` : '/'
+                    var slug = project.node.slug? `/${project.node.slug}` : '/'
                     if (i < limit) {
-                        return <AniLink to className='project-card fade-in' key={i} to={slug}>
+                        return <AniLink to className='project-card fade-in' key={i} to={`/projets${slug}`}>
                     <div className='project-image-div'>
                             {project.node.imagePrincipale && <BackgroundImage className='project-image' fluid={project.node.imagePrincipale.fluid}/>}
                             <div className="plus-div">+</div>

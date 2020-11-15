@@ -1,5 +1,13 @@
+
+.one-project-page .one-project-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 7vw;
+}
+
+
 .one-project-page .main-image-container {
-    padding: 7vw;
+    padding: 4vw 7vw 3vw 7vw;
 }
 
 
@@ -93,4 +101,24 @@
     height: 50%;
     width: 100%;
     background-color: grey
+}
+
+
+@media screen and (max-width : 700px) {
+
+    .one-project-page .project-info-container {
+    flex-direction: column;
+}
+.one-project-page .project-info-container:nth-of-type(3) {
+    margin-top: 30px;
+
+}
+.one-project-page .project-info-container .info-div-1 > div{
+    margin: 20px 0;
+}
+.project-info-container .info-div-3, .project-info-container .project-description, .project-info-container .project-title-container {
+    width: 100%;
+    margin: 20px 0;
+}
+
 }

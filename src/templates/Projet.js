@@ -2,6 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import './../components/projet.css'
 import {graphql, useStaticQuery} from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 
 
@@ -12,6 +13,7 @@ const Projet = ({data}) => {
     const imagePaul = data.imagePaul
     return (
         <div className='one-project-page'>
+            <div className='one-project-nav'><AniLink className='btn2' to='/'>Accueil</AniLink><AniLink className='btn2' to='/notre-travail'>Projets</AniLink></div>
             <div className='main-image-container'>
                 <Img fluid={project.imagePrincipale.fluid} className='main-image'/>
             </div>
