@@ -73,14 +73,9 @@ const Travail = ({mode, composant}) => {
         document.querySelectorAll('.filter-btns')[btnClicked].click()
         setProjectsDisplayed(array)
         
-        document.querySelectorAll('.project-image').forEach((node) => {
-            node.addEventListener('mouseover', () => {
 
-            })
-        })
 
     }, [mode, category])
- 
     
     
         function handleFilter(e) {

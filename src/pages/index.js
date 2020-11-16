@@ -34,7 +34,6 @@ export default function Home() {
             
             <Nav mode={mode} openModal={handleModal}/>
 
-            <Contact open={contactModalOpened} openModal={handleModal}/>
 
             <Header mode={mode} openModal={handleModal}/>
             <Services mode={mode}/>
@@ -43,5 +42,6 @@ export default function Home() {
             <About mode={mode}/>
             
             <Footer mode={mode}/>
+            <Contact open={contactModalOpened} openModal={handleModal}/>
   </Layout>
 }

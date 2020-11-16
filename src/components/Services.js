@@ -75,8 +75,7 @@ const Services = ({mode}) => {
                         </h4>
                         <div className="services-icone"><Img fluid={design.childImageSharp.fluid} alt="logo design"/></div>
                         <p style = { fontP}>
-                            Lorem ipsum amet, consectetur adipiscing elit. Consectetur imperdiet congue nulla augue Donec tellus maecenas proin phasellus nec scelerisque. Faucibus libero vel. Eu scelerisque
-                        </p>
+                            Besoin d'un site vitrine ? D'un blog  ? D'une boutique e-commerce ? Quel que soit votre projet, nous vous accompagnons dans la conception de services intuitifs et d'interfaces esthétiques.                        </p>
                     </section>
                     <section>
                         <h4>

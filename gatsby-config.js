@@ -12,6 +12,18 @@ require("dotenv").config({
 
 module.exports = {
   /* Your site config here */
+
+
+  siteMetadata:{
+    title: "< MP > Web Agency",
+    description: "MP, Marine et Paul, designeuse et développeur de sites web",
+    author: "MP",
+    image: './static/fav-icon1.png', 
+    siteUrl: "https://mp-site-vitrine.netlify.app/",
+    
+
+  },
+
   plugins: [
     // `gatsby-plugin-sitemap`,
     // `gatsby-plugin-styled-components`,

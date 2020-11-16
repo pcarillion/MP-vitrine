@@ -62,7 +62,7 @@ a {
     color:  #207D85;
     padding: 5px 20px !important;
     border-radius: 90px;
-
+    z-index: 2;
     background-color: transparent;
     border: 0.5px solid  #207D85;
 }
@@ -487,8 +487,6 @@ header section p {
     padding: 5px 10px;
 }
 
-
-
 #projects-container {
     width: 100%;
     display: flex;
@@ -565,6 +563,9 @@ header section p {
 
 
 @media screen and (max-width : 800px) {
+    #travail-container h2 {
+        margin-top: 60px;
+    }
     #travail-btns-list {
         padding: 20px 0;
     }
