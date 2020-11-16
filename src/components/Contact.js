@@ -11,16 +11,16 @@ const Contact = ({open, openModal}) => {
         address: "",
         date: "",
         projet: ""
-      });
+    });
 
-      function error_input(input) {
+    function error_input(input) {
         input.style.border ='#FF7600 0.5px solid'
         setTimeout(() => {
             input.style.border ='white 0.5px solid'
         }, 1000);
-      }
+    }
 
-      const handleSubmit = async e => {
+    const handleSubmit = async e => {
         e.preventDefault();
         console.log(mail)
         if (mail.name.length == 0) {
@@ -45,42 +45,44 @@ const Contact = ({open, openModal}) => {
         // }
         emailjs.send('3439D9FF76F21C0DFE1D4535', 'template_okstuxs', mail, 'user_DlYdoyEkxwf84MFRThvCk')
             .then((result) => {
-                console.log(result)
+                console.log(result);
+                openModal(false);
             }, (error) => {
-                console.log(error)
+                console.log(error);
             })
         console.log(e)
-      };
+    };
+
     const handleChange = e => {
         setMail({...mail, [e.target.name]: e.target.value });
-      }
+    }
 
-      useEffect(() => {
+    useEffect(() => {
         if (open == false) {
-            document.getElementById('popup').style.display = 'none'
-            document.getElementsByTagName('body')[0].style.overflow ='auto'
-          } else if (open == true) {
-            document.getElementsByTagName('body')[0].style.overflow ='hidden'
-            document.getElementById('popup').style.display = 'block'
-          }
-      }, [open])
+            document.getElementById('popup').style.display = 'none';
+            document.getElementsByTagName('body')[0].style.overflow ='auto';
+        } else if (open == true) {
+            document.getElementsByTagName('body')[0].style.overflow ='hidden';
+            document.getElementById('popup').style.display = 'block';
+        }
+    }, [open]);
 
 
-      function closeModal() {
-          openModal(false)
-      }
+    function closeModal() {
+        openModal(false);
+    }
 
 
     return (
         <div className='popup-wrapper' id ='popup'>
             <form className='popup-container' onChange={handleChange} onSubmit={handleSubmit} data-netlify='true'>
                 <h2>Demander un devis</h2>  
-                <div id='close-form' onClick={openModal}>&#10006;</div>
+                <div id='close-form' onClick={closeModal}>&#10006;</div>
                     <div className='form-section'>
                         <h3 className='orange'>Informations</h3>
                         <input type='text' id='input-name' name='name' placeholder='Nom prénom *'/>
                         <input type='text' id='input-company' name='company' placeholder="Nom de l'entreprise"/>
-                        <input type='text' id='input-siret' name='siret' placeholder="Siret *"/>
+                        <input type='text' id='input-siret' name='siret' placeholder="Siret"/>
                         <textarea id='input-address' placeholder="Adresse *" name='address'/>
                         <input type='text' id='input-phone' placeholder="Téléphone *"  name='phone'/>
                         <input type='text' id='input-email' placeholder="Adresse email *"  name='email'/>
