@@ -538,11 +538,34 @@ header section p {
     opacity: 0;
     font-family: 'Open sans';
 }
+
 #projects-container .project-card:hover .plus-div {
     opacity: 1;
 }
 
-.project-image {
+#projects-container .plus-div > div {
+    height: 100%;
+    width: 100%;
+}
+
+#projects-container .plus-div > div > div:first-of-type {
+    width: 16vh;
+    height: 0;
+    border-top: 2px solid white;
+    top: calc(50% - 1px);
+    left: calc(50% + 1px - 8vh);
+}
+
+#projects-container .plus-div > div > div:nth-child(2) {
+    width: 16vh;
+    height: 0;
+    border-top: 2px solid white;
+    left: calc(50% + 1px - 8vh);
+    transform: rotate(90deg);
+    top: calc(50% - 1px)
+}
+
+    .project-image {
     height: 100%;
     width: 100%;
 }

@@ -62,24 +62,24 @@ const Contact = ({open, openModal}) => {
         setMail({...mail, [e.target.name]: e.target.value });
     }
 
-    // useEffect(() => {
-    //     if (open == false) {
-    //         document.getElementById('popup').style.display = 'none';
-    //         document.getElementsByTagName('body')[0].style.overflow ='auto';
-    //     } else if (open == true) {
-    //         document.getElementsByTagName('body')[0].style.overflow ='hidden';
-    //         document.getElementById('popup').style.display = 'block';
-    //     }
-    // }, [open]);
+    useEffect(() => {
+        if (open == false) {
+            // document.getElementById('popup').style.display = 'none';
+            document.getElementsByTagName('body')[0].style.overflow ='auto';
+        } else if (open == true) {
+            document.getElementsByTagName('body')[0].style.overflow ='hidden';
+            // document.getElementById('popup').style.display = 'block';
+        }
+    }, [open]);
 
     const popupStyle = {};
 
-            if (open == false) {
-                popupStyle.display = 'none';
-            } else if (open == true) {
-                popupStyle.display = 'block';
+        if (open == false) {
+            popupStyle.display = 'none';
+        } else if (open == true) {
+            popupStyle.display = 'block';
 
-            }
+        }
 
 
     function closeModal() {

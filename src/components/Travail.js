@@ -172,7 +172,12 @@ const Travail = ({mode, composant}) => {
                         return <AniLink to className='project-card fade-in' key={i} to={`/projets${slug}`}>
                     <div className='project-image-div'>
                             {project.node.imagePrincipale && <BackgroundImage className='project-image' fluid={project.node.imagePrincipale.fluid}/>}
-                            <div className="plus-div">+</div>
+                            <div className="plus-div">
+                                <div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
                     </div>
                     <h4>
                         {project.node.titre}

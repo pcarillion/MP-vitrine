@@ -68,7 +68,7 @@ const Projet = ({data}) => {
                     </section>
                 </div>
             </div>
-            <div className='galerie-container'>
+            {/* <div className='galerie-container'>
                 <div className='galerie-image-1'></div>
                 <div>
                     <div className='galerie-image-2'>
@@ -78,7 +78,7 @@ const Projet = ({data}) => {
 
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
