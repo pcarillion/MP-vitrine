@@ -25,18 +25,23 @@ const Contact = ({open, openModal}) => {
         console.log(mail)
         if (mail.name.length == 0) {
             error_input(document.getElementById('input-name'))
+            return;
         } 
         if (document.getElementById('input-email').value === "") {
             error_input(document.getElementById('input-email'))
+            return;
         } 
         if (document.getElementById('input-phone').value === "") {
             error_input(document.getElementById('input-phone'))
+            return;
         }
         if (document.getElementById('input-date').value === "") {
             error_input(document.getElementById('input-date'))
+            return;
         }
         if (document.getElementById('input-projet').value === "") {
             error_input(document.getElementById('input-projet'))
+            return;
         }  
         // try {
 
@@ -57,15 +62,24 @@ const Contact = ({open, openModal}) => {
         setMail({...mail, [e.target.name]: e.target.value });
     }
 
-    useEffect(() => {
-        if (open == false) {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementsByTagName('body')[0].style.overflow ='auto';
-        } else if (open == true) {
-            document.getElementsByTagName('body')[0].style.overflow ='hidden';
-            document.getElementById('popup').style.display = 'block';
-        }
-    }, [open]);
+    // useEffect(() => {
+    //     if (open == false) {
+    //         document.getElementById('popup').style.display = 'none';
+    //         document.getElementsByTagName('body')[0].style.overflow ='auto';
+    //     } else if (open == true) {
+    //         document.getElementsByTagName('body')[0].style.overflow ='hidden';
+    //         document.getElementById('popup').style.display = 'block';
+    //     }
+    // }, [open]);
+
+    const popupStyle = {};
+
+            if (open == false) {
+                popupStyle.display = 'none';
+            } else if (open == true) {
+                popupStyle.display = 'block';
+
+            }
 
 
     function closeModal() {
@@ -74,7 +88,7 @@ const Contact = ({open, openModal}) => {
 
 
     return (
-        <div className='popup-wrapper' id ='popup'>
+        <div className='popup-wrapper' id ='popup' style={popupStyle}>
             <form className='popup-container' onChange={handleChange} onSubmit={handleSubmit} data-netlify='true'>
                 <h2>Demander un devis</h2>  
                 <div id='close-form' onClick={closeModal}>&#10006;</div>
