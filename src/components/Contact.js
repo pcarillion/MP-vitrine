@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import emailjs from 'emailjs-com'
 
 const Contact = ({open, openModal}) => {
-    console.log(open)
     const [mail, setMail] = useState({
         email: "",
         name: "",
@@ -66,11 +65,17 @@ const Contact = ({open, openModal}) => {
           }
       }, [open])
 
+
+      function closeModal() {
+          openModal(false)
+      }
+
+
     return (
         <div className='popup-wrapper' id ='popup'>
             <form className='popup-container' onChange={handleChange} onSubmit={handleSubmit} data-netlify='true'>
                 <h2>Demander un devis</h2>  
-                <div id='close-form' onClick={() => openModal(false)}>&#10006;</div>
+                <div id='close-form' onClick={openModal}>&#10006;</div>
                     <div className='form-section'>
                         <h3 className='orange'>Informations</h3>
                         <input type='text' id='input-name' name='name' placeholder='Nom prénom *'/>

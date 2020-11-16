@@ -18,7 +18,7 @@ import Contact from './../components/Contact'
 export default function Home() {
 
   const [mode, setMode] = useState('MP')
-  const[contactModalOpened, setModal] = useState(false)
+  const [contactModalOpened, setModal] = useState(false)
 
   function handleMode (x) {
     setMode(x)
@@ -42,6 +42,7 @@ export default function Home() {
             <About mode={mode}/>
             
             <Footer mode={mode}/>
+
             <Contact open={contactModalOpened} openModal={handleModal}/>
   </Layout>
 }
