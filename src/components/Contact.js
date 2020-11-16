@@ -56,12 +56,12 @@ const Contact = ({open, openModal}) => {
       }
 
       useEffect(() => {
-          if (open == true) {
-            document.getElementsByTagName('body')[0].style.overflow ='hidden'
-            document.getElementById('popup').style.display = 'block'
-          } else if (open == false) {
+        if (open == false) {
             document.getElementById('popup').style.display = 'none'
             document.getElementsByTagName('body')[0].style.overflow ='auto'
+          } else if (open == true) {
+            document.getElementsByTagName('body')[0].style.overflow ='hidden'
+            document.getElementById('popup').style.display = 'block'
           }
       }, [open])
 

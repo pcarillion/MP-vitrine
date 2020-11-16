@@ -22,6 +22,10 @@ const Tarifs = ({mode, openModal}) => {
         sectionBG.backgroundColor = '#FCF3EB'
     }
 
+    function openDevis() {
+        openModal(true)
+    }
+
     return (
         <div id='tarifs-main-container' style = {mainBG}>
             <h2 style = {fonth2} id='tarifs-title'>Nos Tarifs</h2>
@@ -33,7 +37,7 @@ const Tarifs = ({mode, openModal}) => {
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">1000€</p>
-                    <p className="btn" onClick={() => openModal(true)}>Demander un devis</p>
+                    <p className="btn" onClick={openDevis}>Demander un devis</p>
                 </section>
                 <section style = { sectionBG }>
                     <h4>Website complet</h4>
@@ -42,7 +46,7 @@ const Tarifs = ({mode, openModal}) => {
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">200€ <span>/jour</span></p>
-                    <p className="btn" onClick={() => openModal(true)}>Demander un devis</p>
+                    <p className="btn" onClick={openDevis}>Demander un devis</p>
                 </section>
                 <section style = { sectionBG }>
                     <h4>Maintenance</h4>
@@ -51,7 +55,7 @@ const Tarifs = ({mode, openModal}) => {
                     </p>
                     <p className='orange'>à partir de</p>
                     <p className="price">150€ <span>/jour</span></p>
-                    <p className="btn" onClick={() => openModal(true)}>Demander un devis</p>
+                    <p className="btn" onClick={openDevis}>Demander un devis</p>
                 </section>
             </div>
         </div>
