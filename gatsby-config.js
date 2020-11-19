@@ -18,10 +18,8 @@ module.exports = {
     title: "< MP > Web Agency",
     description: "MP, Marine et Paul, designeuse et développeur de sites web",
     author: "MP",
-    image: './static/fav-icon1.png', 
+    image: './static/fav-icon1.jpg', 
     siteUrl: "https://mp-site-vitrine.netlify.app/",
-    
-
   },
 
   plugins: [
@@ -48,25 +46,25 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       }
     },
-    // {
-    //   resolve: 'gatsby-plugin-robots-txt',
-    //   options: {
-    //     host: 'https://gracious-hoover-5a6a6e.netlify.app/',
-    //     sitemap: 'https://gracious-hoover-5a6a6e.netlify.app/sitemap.xml',
-    //     policy: [{ userAgent: '*', allow: '/' }]
-    //   }
-    // },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `GatsbyJS`,
-    //     short_name: `GatsbyJS`,
-    //     start_url: `/`,
-    //     background_color: `#f7f0eb`,
-    //     theme_color: `#a2466c`,
-    //     display: `standalone`,
-    //     icon: `static/logo.png`
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://gracious-hoover-5a6a6e.netlify.app/',
+        sitemap: 'https://gracious-hoover-5a6a6e.netlify.app/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/fav-icon1.jpg`
+      },
+    },
   ],
 }

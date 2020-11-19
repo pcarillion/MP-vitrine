@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import ToggleMode from './../components/ToggleMode'
 
 import Nav from './../components/Nav'
+import SEO from './../components/SEO'
 import Layout from './../components/Layout'
 import Header from './../components/Header'
 import Services from './../components/Services'
@@ -28,8 +29,10 @@ export default function Home() {
     setModal(x)
   }
 
+
+
   return <Layout>
-            
+            <SEO/>
             <ToggleMode mode={mode} callback={handleMode}/>
             
             <Nav mode={mode} openModal={handleModal}/>

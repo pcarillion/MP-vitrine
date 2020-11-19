@@ -35,9 +35,6 @@ const Travail = ({mode, composant}) => {
     }
     const projectImages = useRef(null);
     const {projets} = useStaticQuery(query);
-
-    console.log(projets)
-
     const [btnClicked, setBtnClicked] = useState(0)
     const [projectsDisplayed, setProjectsDisplayed] = useState([])
     const [category, setCategory] = useState('all')
@@ -58,8 +55,7 @@ const Travail = ({mode, composant}) => {
                     return array.push(projet)
                 }
             })
-        }
-        else {
+        } else {
             projets.edges.map(projet => {
                 if (mode === 'Paul' && projet.node.auteur == 'Paul' && projet.node.categorie.includes(category)) {
                     return array.push(projet)
@@ -82,12 +78,12 @@ const Travail = ({mode, composant}) => {
             var filterBtns = document.querySelectorAll('.filter-btns')
             for (let i = 0; i < filterBtns.length; i ++) {
                 if (filterBtns[i] === e.target) {
-                    filterBtns[i].style.opacity = "1"
-                    filterBtns[i].style.border = clickedBorder.border
-                    setBtnClicked(i)
+                    filterBtns[i].style.opacity = "1";
+                    filterBtns[i].style.border = clickedBorder.border;
+                    setBtnClicked(i);
                 } else {
-                    filterBtns[i].style.opacity = "0.4"
-                    filterBtns[i].style.border = "solid 1px rgba(0,0,0,0)"
+                    filterBtns[i].style.opacity = "0.4";
+                    filterBtns[i].style.border = "solid 1px rgba(0,0,0,0)";
                 }
             }
             var value = e.target.getAttribute('data-filter')
@@ -173,7 +169,7 @@ const Travail = ({mode, composant}) => {
                     <div className='project-image-div'>
                             {project.node.imagePrincipale && <BackgroundImage className='project-image' fluid={project.node.imagePrincipale.fluid}/>}
                             <div className="plus-div">
-                                <div>
+                                <div >
                                     <div></div>
                                     <div></div>
                                 </div>
