@@ -14,7 +14,7 @@ const Projet = ({data}) => {
     const imagePaul = data.imagePaul
     return (
         <div className='one-project-page'>
-            <SEO title={project.titre} description={project.description.description}/>
+            <SEO title={project.titre} description={project.description ? project.description.description : ''}/>
             <div className='one-project-nav'><AniLink className='btn2' to='/'>Accueil</AniLink><AniLink className='btn2' to='/notre-travail'>Projets</AniLink></div>
             <div className='main-image-container'>
                 <Img fluid={project.imagePrincipale.fluid} className='main-image'/>
